@@ -4,7 +4,7 @@
 		<name>Gnome</name>
 		<description></description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-		<update version="0.1.7">
+		<update version="0.1.8">
 			<file name="race-gnome.xml" url="https://raw.githubusercontent.com/KoenPater/aurora_dnd5/master/core/players-handbook/race-gnome.xml" />
 		</update>
 	</info>
@@ -43,7 +43,7 @@
       <h4>GNOME TRAITS</h4>
       <p>Your gnome character has certain characteristics in common with all other gnomes.</p>
       <p>
-        <span class="feature">Ability Scores.</span>Dexterity +2, Intelligence +2, Charisma +1, Strength -2<br />
+        <span class="feature">Ability Scores.</span>Dexterity +1, Intelligence +2, Charisma +2, Strength -2<br />
         <span class="feature">Age.</span>Gnomes mature at the same rate humans do, and most are expected to settle down into an adult life by around age 40. They can live 350 to almost 500 years.<br />
         <span class="feature">Alignment.</span>Gnomes are most often good. Those who tend toward law are sages, engineers, researchers, scholars, investigators, or inventors. Those who tend toward chaos are minstrels, tricksters, wanderers, or fanciful jewelers. Gnomes are good-hearted, and even the tricksters among them are more playful than vicious.<br />
         <span class="feature">Size.</span>Gnomes are between 3 and 4 feet tall and average about 40 pounds. Your size is Small.<br />
@@ -67,8 +67,8 @@
     <rules>
       <stat name="intelligence" value="2" />
       <stat name="strength" value="-2" />
-      <stat name="dexterity" value="2" />
-      <stat name="charisma" value="1" />	  
+      <stat name="dexterity" value="1" />
+      <stat name="charisma" value="2" />	  
       <stat name="innate speed" value="25" bonus="base" />
       <grant type="Size" id="ID_SIZE_SMALL" />
       <grant type="Vision" id="ID_VISION_DARKVISION" />
