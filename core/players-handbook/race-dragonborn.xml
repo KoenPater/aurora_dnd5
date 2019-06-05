@@ -4,8 +4,8 @@
     <name>Dragonborn</name>
     <description></description>
     <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-    <update version="0.2.0">
-      <file name="race-dragonborn.xml" url="https://raw.githubusercontent.com/KoenPater/aurora_dnd5/master/core/players-handbook/races/race-dragonborn.xml" />
+    <update version="0.2.1">
+      <file name="race-dragonborn.xml" url="https://raw.githubusercontent.com/KoenPater/aurora_dnd5/master/core/players-handbook/race-dragonborn.xml" />
     </update>
   </info>
   <element name="Dragonborn" type="Race" source="Player’s Handbook" id="ID_RACE_DRAGONBORN">
@@ -34,7 +34,7 @@
       <h4>DRAGONBORN TRAITS</h4>
       <p>Your draconic heritage manifests in a variety of traits you share with other dragonborn.</p>
       <p>
-        <span class="feature">Ability Score Increase.</span>Your Strength score increases by 2, and your Charisma score increases by 1.
+        <span class="feature">Ability Scores.</span>Strength +2, Constitution +1, Charisma +2, and Dexterity -1.
         <br />
         <span class="feature">Age.</span>Young dragonborn grow quickly. They walk hours after hatching, attain the size and development of a 10-year-old human child by the age of 3, and reach adulthood by 15. They live to be around 80.
         <br />
@@ -46,7 +46,7 @@
         <br />
         <span class="feature">Draconic Ancestry.</span>You have draconic ancestry. Choose one type of dragon from the Draconic Ancestry table. Your breath weapon and damage resistance are determined by the dragon type, as shown in the table.
         <br />
-        <span class="feature">Breath Weapon.</span>You can use your action to exhale destructive energy. Your draconic ancestry determines the size, shape, and damage type of the exhalation. When you use your breath weapon, each creature in the area of the exhalation must make a saving throw, the type of which is determined by your draconic ancestry. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level, and 5d6 at 16th level. After you use your breath weapon, you can’t use it again until you complete a short or long rest.
+        <span class="feature">Breath Weapon.</span>You can use your action to exhale destructive energy. Your draconic ancestry determines the size, shape, and damage type of the exhalation. When you use your breath weapon, each creature in the area of the exhalation must make a saving throw, the type of which is determined by your draconic ancestry. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 3d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 5d6 at 6th level, 7d6 at 11th level, and 9d6 at 16th level. After you use your breath weapon, you can’t use it again until you complete a long rest.
         <br />
         <span class="feature">Damage Resistance.</span>You have resistance to the damage type associated with your draconic ancestry.
         <br />
@@ -66,7 +66,9 @@
     </setters>
     <rules>
       <stat name="strength" value="2"/>
-      <stat name="charisma" value="1"/>
+	  <stat name="dexterity" value="-1"/>
+	  <stat name="constitution" value="1"/>
+      <stat name="charisma" value="2"/>
       <stat name="innate speed" value="30" bonus="base" />
       <grant type="Size" id="ID_SIZE_MEDIUM" />
       <grant type="Language" id="ID_LANGUAGE_COMMON" />
@@ -105,8 +107,8 @@
     <supports />
     <description>
       <p>You can use your action to exhale destructive energy. Your draconic ancestry determines the size, shape, and damage type of the exhalation.</p>
-      <p>When you use your breath weapon, each creature in the area of the exhalation must make a saving throw, the type of which is determined by your draconic ancestry. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level, and 5d6 at 16th level.</p>
-      <p>After you use your breath weapon, you can’t use it again until you complete a short or long rest.</p>
+      <p>When you use your breath weapon, each creature in the area of the exhalation must make a saving throw, the type of which is determined by your draconic ancestry. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 3d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 5d6 at 6th level, 7d6 at 11th level, and 9d6 at 16th level.</p>
+      <p>After you use your breath weapon, you can’t use it again until you complete a long rest.</p>
     </description>
     <sheet action="Action" usage="1/Short Rest">
       <description>Exhale destructive energy. Your breath weapon does {{breath-weapon:dice count}}d{{breath-weapon:dice size}} {{draconic-ancestry:damage type}} damage in a {{draconic-ancestry:breath}}  DC {{breath-weapon:dc}}</description>
@@ -116,10 +118,10 @@
       <stat name="breath-weapon:dc" value="constitution:modifier" />
       <stat name="breath-weapon:dc" value="proficiency" />
       <stat name="breath-weapon:dice size" value="6" bonus="dice" />
-      <stat name="breath-weapon:dice count" value="2" level="1" />
-      <stat name="breath-weapon:dice count" value="1" level="6" />
-      <stat name="breath-weapon:dice count" value="1" level="11" />
-      <stat name="breath-weapon:dice count" value="1" level="16" />
+      <stat name="breath-weapon:dice count" value="3" level="1" />
+      <stat name="breath-weapon:dice count" value="2" level="6" />
+      <stat name="breath-weapon:dice count" value="2" level="11" />
+      <stat name="breath-weapon:dice count" value="2" level="16" />
     </rules>
   </element>
   <element name="Damage Resistance" type="Racial Trait" source="Player’s Handbook" id="ID_RACIAL_TRAIT_DAMAGE_RESISTANCE">

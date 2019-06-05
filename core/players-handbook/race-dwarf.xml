@@ -4,8 +4,8 @@
 		<name>Dwarf</name>
 		<description></description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-		<update version="0.2.6">
-			<file name="race-dwarf.xml" url="https://raw.githubusercontent.com/KoenPater/aurora_dnd5/master/core/players-handbook/races/race-dwarf.xml" />
+		<update version="0.2.7">
+			<file name="race-dwarf.xml" url="https://raw.githubusercontent.com/KoenPater/aurora_dnd5/master/core/players-handbook/race-dwarf.xml" />
 		</update>
 	</info>
 
@@ -13,7 +13,7 @@
     <description>
       <p class="flavor">Kingdoms rich in ancient grandeur, halls carved into the roots of mountains, the echoing of picks and hammers in deep mines and blazing forges, a commitment to clan and tradition, and a burning hatred of goblins and orcs—these common threads unite all dwarves.</p>
       <h4>SHORT AND STOUT</h4>
-      <p>Bold and hardy, dwarves are known as skilled warriors, miners, and workers of stone and metal. Though they stand well under 5 feet tall, dwarves are so broad and compact that they can weigh as much as a human standing nearly two feet taller. Their courage and endurance are also easily a match for any of the larger folk.<br /> <span class="indent"></span>Dwarven skin ranges from deep brown to a paler hue tinged with red, but the most common shades are light brown or deep tan, like certain tones of earth. Their hair, worn long but in simple styles, is usually black, gray, or brown, though paler dwarves often have red hair. Male dwarves value their beards highly and groom them carefully.</p>
+      <p>Bold and hardy, dwarves are known as skilled warriors, miners, and workers of stone and metal. Though they stand well under 5 feet tall, dwarves are so broad and compact that they easily weigh as much as a human standing nearly two feet taller. Their courage and endurance are also easily a match for any of the larger folk.<br /> <span class="indent"></span>Dwarven skin ranges from deep brown to a paler hue tinged with red, but the most common shades are light brown or deep tan, like certain tones of earth. Their hair, worn long but in simple styles, is usually black, gray, or brown, though paler dwarves often have red hair. Male dwarves value their beards highly and groom them carefully.</p>
       <h4>LONG MEMORY, LONG GRUDGES</h4>
       <p>Dwarves can live to be more than 400 years old, so the oldest living dwarves often remember a very different world. For example, some of the oldest dwarves living in Citadel Felbarr (in the world of the Forgotten Realms) can recall the day, more than three centuries ago, when orcs conquered the fortress and drove them into an exile that lasted over 250 years. This longevity grants them a perspective on the world that shorter-lived races such as humans and halflings lack.<br /> <span class="indent" />Dwarves are solid and enduring like the mountains they love, weathering the passage of centuries with stoic endurance and little change. They respect the traditions of their clans, tracing their ancestry back to the founding of their most ancient strongholds in the youth of the world, and don't abandon those traditions lightly. Part of those traditions is devotion to the gods of the dwarves, who uphold the dwarven ideals of industrious labor, skill in battle, and devotion to the forge.<br /> <span class="indent" />Individual dwarves are determined and loyal, true to their word and decisive in action, sometimes to the point of stubbornness. Many dwarves have a strong sense of justice, and they are slow to forget wrongs they have suffered. A wrong done to one dwarf is a wrong done to the dwarf’s entire clan, so what begins as one dwarf’s hunt for vengeance can become a full-blown clan feud.</p>
       <h4>CLANS AND KINGDOMS</h4>
@@ -32,10 +32,10 @@
       <h4>DWARF TRAITS</h4>
       <p>Your dwarf character has an assortment of inborn abilities, part and parcel of dwarven nature.</p>
       <p>
-        <span class="feature">Ability Score Increase. </span>Your Constitution score increases by 2.<br />
+        <span class="feature">Ability Scores. </span>Constitution +3, Wisdom +1, Dexterity -2, Charisma -1<br />
         <span class="feature">Age. </span>Dwarves mature at the same rate as humans, but they’re considered young until they reach the age of 50. On average, they live about 350 years.<br />
         <span class="feature">Alignment. </span>Most dwarves are lawful, believing firmly in the benefits of a well-ordered society. They tend toward good as well, with a strong sense of fair play and a belief that everyone deserves to share in the benefits of a just order.<br />
-        <span class="feature">Size. </span>Dwarves stand between 4 and 5 feet tall and average about 150 pounds. Your size is Medium.<br />
+        <span class="feature">Size. </span>Dwarves stand between 4 and 5 feet tall and average about 160 pounds. Your size is Medium.<br />
         <span class="feature">Speed. </span>Your base walking speed is 25 feet. Your speed is not reduced by wearing heavy armor.<br />
         <span class="feature">Darkvision. </span>Accustomed to life underground, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray.<br />
         <span class="feature">Dwarven Resilience. </span>You have advantage on saving throws against poison, and you have resistance against poison damage (explained in chapter 9).<br />
@@ -54,7 +54,10 @@
       <set name="names-format">{{name}} {{clan}}</set>
     </setters>
     <rules>
-      <stat name="constitution" value="2" />
+      <stat name="constitution" value="3" />
+      <stat name="wisdom" value="1" />
+      <stat name="dexterity" value="-2" />
+      <stat name="charisma" value="-1" />	  
       <stat name="innate speed" value="25" bonus="base" />
       <grant type="Size" id="ID_SIZE_MEDIUM" />
       <grant type="Vision" id="ID_VISION_DARKVISION" />
@@ -142,14 +145,14 @@
     <description>
       <p>As a hill dwarf, you have keen senses, deep intuition, and remarkable resilience. The gold dwarves of Faerûn in their mighty southern kingdom are hill dwarves, as are the exiled Neidar and the debased Klar of Krynn in the Dragonlance setting.</p>
       <p>
-        <span class="feature">Ability Score Increase.</span>Your Wisdom score increases by 1.<br />
+        <span class="feature">Ability Scores.</span>Wisdom +1<br />
         <span class="feature">Dwarven Toughness.</span>Your hit point maximum increases by 1, and it increases by 1 every time you gain a level.<br />
       </p>
     </description>
     <sheet display="false"/>
     <setters>
       <set name="height" modifier="2d4">3'8"</set>
-      <set name="weight" modifier="2d6">115 lb.</set>
+      <set name="weight" modifier="2d6">125 lb.</set>
     </setters>
     <rules>
       <stat name="wisdom" value="1" />
@@ -174,16 +177,16 @@
     <supports>Dwarf</supports>
     <requirements />
     <description>
-      <p>As a mountain dwarf, you're strong and hardy, accustomed to a difficult life in rugged terrain. You’re probably on the tall side (for a dwarf), and tend toward lighter coloration. The shield dwarves of northern Faerûn, as well as the ruling Hylar clan and the noble Daewar clan of Dragonlance, are mountain dwarves.</p>
+      <p>As a mountain dwarf, you're strong and hardy, accustomed to a difficult life in rugged terrain. You’re probably on the tall side (for a dwarf), and tend toward lighter coloration.</p>
       <p>
-        <span class="feature">Ability Score Increase. </span>Your Strength score increases by 2.<br />
+        <span class="feature">Ability Scores. </span>Strength +2<br />
         <span class="feature">Dwarven Armor Training. </span>You have proficiency with light and medium armor.
       </p>
     </description>
     <sheet display="false"/>
     <setters>
       <set name="height" modifier="2d4">4'</set>
-      <set name="weight" modifier="2d6">130 lb.</set>
+      <set name="weight" modifier="2d6">140 lb.</set>
     </setters>
     <rules>
       <stat name="strength" value="2" />

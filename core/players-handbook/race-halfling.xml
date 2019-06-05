@@ -4,8 +4,8 @@
 		<name>Halfling</name>
 		<description></description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-		<update version="0.1.5">
-			<file name="race-halfling.xml" url="https://raw.githubusercontent.com/KoenPater/aurora_dnd5/master/core/players-handbook/races/race-halfling.xml" />
+		<update version="0.1.6">
+			<file name="race-halfling.xml" url="https://raw.githubusercontent.com/KoenPater/aurora_dnd5/master/core/players-handbook/race-halfling.xml" />
 		</update>
 	</info>
 
@@ -46,7 +46,7 @@
       <h4>HALFLING TRAITS</h4>
       <p>Your halfling character has a number of traits in common with all other halflings.</p>
       <p>
-        <span class="feature">Ability Score Increase.</span>Your Dexterity score increases by 2.<br/>
+        <span class="feature">Ability Scores.</span>Dexterity +3, Strength -2.<br/>
         <span class="feature">Age.</span>A halfling reaches adulthood at the age of 20 and generally lives into the middle of his or her second century.<br/>
         <span class="feature">Alignment.</span>Most halflings are lawful good. As a rule, they are good-hearted and kind, hate to see others in pain, and have no tolerance for oppression. They are also very orderly and traditional, leaning heavily on the support of their community and the comfort of their old ways.<br/>
         <span class="feature">Size.</span>Halflings average about 3 feet tall and weigh about 40 pounds. Your size is Small.<br/>
@@ -126,10 +126,10 @@
   <element name="Lightfoot Halfling" type="Sub Race" source="Player’s Handbook" id="ID_SUB_RACE_LIGHTFOOT_HALFLING">
     <supports>Halfling</supports>
     <description>
-      <p>As a lightfoot halfling, you can easily hide from notice, even using other people as cover. You’re inclined to be affable and get along well with others. In the Forgotten Realms, lightfoot halflings have spread the farthest and thus are the most common variety.</p>
-      <p>Lightfoots are more prone to wanderlust than other halflings, and often dwell alongside other races or take up a nomadic life. In the world of Greyhawk, these halflings are called hairfeet or tallfellows.</p>
+      <p>As a lightfoot halfling, you can easily hide from notice, even using other people as cover. You’re inclined to be affable and get along well with others.</p>
+      <p>Lightfoots are more prone to wanderlust than other halflings, and often dwell alongside other races or take up a nomadic life.</p>
       <p>
-        <span class="feature">Ability Score Increase.</span>Your Charisma score increases by 1.<br/>
+        <span class="feature">Ability Scores.</span>Charisma +1.<br/>
         <span class="feature">Naturally Stealthy.</span>You can attempt to hide even when you are obscured only by a creature that is at least one size larger than you.<br/>
       </p>
     </description>
@@ -143,9 +143,9 @@
     <supports>Halfling</supports>
     <requirements />
     <description>
-      <p>As a stout halfling, you’re hardier than average and have some resistance to poison. Some say that stouts have dwarven blood. In the Forgotten Realms, these halflings are called stronghearts, and they’re most common in the south.</p>
+      <p>As a stout halfling, you’re hardier than average and have some resistance to poison. Some say that stouts have dwarven blood.</p>
       <p>
-        <span class="feature">Ability Score Increase.</span>Your Constitution score increases by 1.<br/>
+        <span class="feature">Ability Scores.</span>Constitution +1.<br/>
         <span class="feature">Stout Resilience.</span>You have advantage on saving throws against poison, and you have resistance against poison damage.<br/>
       </p>
     </description>

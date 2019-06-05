@@ -4,8 +4,8 @@
 		<name>Tiefling</name>
 		<description></description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-		<update version="0.2.0">
-			<file name="race-tiefling.xml" url="https://raw.githubusercontent.com/KoenPater/aurora_dnd5/master/core/players-handbook/races/race-tiefling.xml" />
+		<update version="0.2.1">
+			<file name="race-tiefling.xml" url="https://raw.githubusercontent.com/KoenPater/aurora_dnd5/master/core/players-handbook/race-tiefling.xml" />
 		</update>
 	</info>
 
@@ -17,7 +17,7 @@
       <h4>INFERNAL BLOODLINE</h4>
       <p>Tieflings are derived from human bloodlines, and in the broadest possible sense, they still look human. However, their infernal heritage has left a clear imprint on their appearance. Tieflings have large horns that take any of a variety of shapes: some have curling horns like a ram, others have straight and tall horns like a gazelle’s, and some spiral upward like an antelopes’ horns. They have thick tails, four to five feet long, which lash or coil around their legs when they get upset or nervous. Their canine teeth are sharply pointed, and their eyes are solid colors—black, red, white, silver, or gold—with no visible sclera or pupil. Their skin tones cover the full range of human coloration, but also include various shades of red. Their hair, cascading down from behind their horns, is usually dark, from black or brown to dark red, blue, or purple.</p>
       <h4>SELF-RELIANT AND SUSPICIOUS</h4>
-      <p>Tieflings subsist in small minorities found mostly in human cities or towns, often in the roughest quarters of those places, where they grow up to be swindlers, thieves, or crime lords. Sometimes they live among other minority populations in enclaves where they are treated with more respect.</p>
+      <p>Tieflings subsist in small minorities found mostly in human cities or towns, often in the roughest quarters of those places, where they often grow up to be swindlers, thieves, or crime lords. Those who seek to escape this fate often turn to a life of adventuring, where they can prove themselves to be more than the sin of their forebearers.</p>
       <p class="indent">Lacking a homeland, tieflings know that they have to make their own way in the world and that they have to be strong to survive. They are not quick to trust anyone who claims to be a friend, but when a tiefling’s companions demonstrate that they trust him or her, the tiefling learns to extend the same trust to them. And once a tiefling gives someone loyalty, the tiefling is a firm friend or ally for life.</p>
       <h4>TIEFLING NAMES</h4>
       <p>Tiefling names fall into three broad categories. Tieflings born into another culture typically have names reflective of that culture. Some have names derived from the Infernal language, passed down through generations, that reflect their fiendish heritage. And some younger tieflings, striving to find a place in the world, adopt a name that signifies a virtue or other concept and then try to embody that concept. For some, the chosen name is a noble quest. For others, it’s a grim destiny.</p>
@@ -29,7 +29,7 @@
       <h4>TIEFLING TRAITS</h4>
       <p>Tieflings share certain racial traits as a result of their infernal descent.</p>
       <p>
-        <span class="feature">Ability Score Increase.</span>Your Intelligence score increases by 1, and your Charisma score increases by 2.<br/>
+        <span class="feature">Ability Scores.</span>Dexterity +1, Intelligence +1, Charisma +2.<br/>
         <span class="feature">Age.</span>Tieflings mature at the same rate as humans but live a few years longer.<br/>
         <span class="feature">Alignment.</span>Tieflings might not have an innate tendency toward evil, but many of them end up there. Evil or not, an independent nature inclines many tieflings toward a chaotic alignment.<br/>
         <span class="feature">Size.</span>Tieflings are about the same size and build as humans. Your size is Medium.<br/>
@@ -52,6 +52,7 @@
     <rules>      
       <stat name="intelligence" value="1" requirements="!ID_INTERNAL_GRANTS_TIEFLING_SUBRACE" />
       <stat name="charisma" value="2" requirements="!ID_INTERNAL_GRANTS_TIEFLING_SUBRACE"/>
+      <stat name="dexterity" value="1" requirements="!ID_INTERNAL_GRANTS_TIEFLING_SUBRACE"/>	  
       <stat name="innate speed" value="30" bonus="base"/>
       <grant type="Size" id="ID_SIZE_MEDIUM" />
       <grant type="Vision" id="ID_VISION_DARKVISION" />
