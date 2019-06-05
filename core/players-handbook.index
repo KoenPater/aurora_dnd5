@@ -63,6 +63,6 @@
 		<file name="spells.xml" url="https://raw.githubusercontent.com/KoenPater/aurora_dnd5/master/core/players-handbook/spells.xml" />
 		<file name="deities.xml" url="https://raw.githubusercontent.com/KoenPater/aurora_dnd5/master/core/players-handbook/deities.xml" />
 		<file name="companions.xml" url="https://raw.githubusercontent.com/KoenPater/aurora_dnd5/master/core/players-handbook/companions.xml" />
-		<file name="custom.xml" url=""/>		
+		<file name="custom.xml" url="https://raw.githubusercontent.com/KoenPater/aurora_dnd5/master/core/players-handbook/custom.xml"/>		
 	</files>
 </index>
