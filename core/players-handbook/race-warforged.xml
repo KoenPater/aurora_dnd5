@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Warforged</name>
+		<description></description>
+		<author url="http://dnd.wizards.com">Wizards of the Coast</author>
+		<update version="0.1.7">
+			<file name="race-warforged.xml" url="https://raw.githubusercontent.com/KoenPater/aurora_dnd5/master/core/players-handbook/race-warforged.xml" />
+		</update>
+	</info>
+ 
+	<!-- Warforged -->
+  <element name="Warforged" type="Race" source="Unearthed Arcana: Eberron" id="ID_WOTC_UA_RACE_WARFORGED">
+    <description>
+    <p class="flavor">The warforged were built to fight in the Last War. The first warforged were mindless automatons, but House Cannith devoted vast resources to improving these steel soldiers. An unexpected breakthrough produced fully sentient soldiers, blending organic and inorganic materials. Warforged may be made from wood and metal, but they can feel pain and emotion. Built as weapons, they must now find a purpose beyond the war. A warforged can be a steadfast ally, a cold-hearted killing machine, or a visionary in search of purpose and meaning. </p>
+    <p>As a warforged, you have the following racial traits.</p>
+    <p>
+      <span class="feature">Ability Scores.</span>Constitution +1.<br/>
+      <span class="feature">Size.</span>Warforged are generally broader and heavier than humans. Your size is Medium.<br/>
+      <span class="feature">Speed.</span>Your base walking speed is 30 feet.<br/>
+      <span class="feature">Warforged Resilience.</span>You were created to have remarkable fortitude, represented by the following benefits:
+				<ul>
+					<li>You have advantage on saving throws against being poisoned, and you have resistance to poison damage.</li>
+					<li>You are immune to disease.</li>
+					<li>You don’t need to eat, drink, or breathe.</li>
+					<li>You don’t need to sleep and don’t suffer the effects of exhaustion due to lack of rest, and magic can’t put you to sleep.</li>
+				</ul>
+	  <span class="feature">Sentry’s Rest.</span> When you take a long rest, you must spend at least six hours of it in an inactive, motionless state, rather than sleeping. In this state, you appear inert, but it doesn’t render you unconscious, and you can see and hear as normal.<br/>
+	  <span class="feature">Integrated Protection.</span> Your body has built-in protective layers, which determine your Armor Class. You gain no benefit from wearing armor, but if you are using a shield, you apply its bonus as normal. You can alter your body to enter different defensive modes; each time you finish a long rest, choose one mode to adopt from the Integrated Protection table, provided you meet the mode’s prerequisite.
+	  <table>
+      <thead><tr><td>Mode</td><td>Prerequisite</td><td>Armor Class</td></tr></thead>
+      <tr><td>Darkwood core (unarmored)</td><td>None</td><td>11 + your Dexterity modifier (add proficiency bonus if proficient with light armor).</td></tr>
+      <tr><td>Composite plating (armored)</td><td>Medium armor proficiency</td><td>13 + your Dexterity modifier (maximum 2) + proficiency bonus.</td></tr>
+      <tr><td>Heavy plating (armored)</td><td>None</td><td>16 + proficiency bonus; disadvantage on Dexterity (Stealth) checks.</td></tr>
+	  </table>
+	  <span class="feature">Languages.</span>You can speak, read, and write Common and one other language of your choice.<br/>
+      <span class="feature">Subrace.</span>As a warforged, your body was designed for a specific purpose. Choose one of these subraces: envoy, juggernaut, or skirmisher.<br/>
+    </p>
+    </description>
+    <sheet display="false" />
+    <setters>
+    <!-- custom names from online generator -->
+    <set name="names" type="custom">Ogler, Warden, Masker, Sunderer, Director, Slasher, Familiar, Abider, Beauty, Cannon, Menace, Ravager, Destroyer, Walker, Tester, Shredder, Bender, Handler</set>
+    <set name="names-format" type="custom">{{custom}}</set>
+    </setters>
+    <rules>    
+		<stat name="constitution" value="1" />
+		<grant type="Size" id="ID_SIZE_MEDIUM" />
+		<stat name="innate speed" value="30" bonus="base" />
+		<grant type="Racial Trait" id="ID_WOTC_UA_RACIAL_TRAIT_WARFORGED_RESILIENCE" />
+		<grant type="Racial Trait" id="ID_WOTC_UA_RACIAL_TRAIT_SENTRYS_REST" />
+		<grant type="Racial Trait" id="ID_WOTC_UA_RACIAL_TRAIT_INTEGRATED_PROTECTION" />		
+		<grant type="Language" id="ID_LANGUAGE_COMMON" />
+		<grant type="Racial Trait" id="ID_RACIAL_TRAIT_WARFORGED_SUBRACE" />
+    </rules>
+  </element>
+  <element name="Warforged Resilience" type="Racial Trait" source="Unearthed Arcana: Eberron" id="ID_WOTC_UA_RACIAL_TRAIT_WARFORGED_RESILIENCE">
+    <description>
+    <p>You were created to have remarkable fortitude, represented by the following benefits:
+		<ul>
+			<li>You have advantage on saving throws against being poisoned, and you have resistance to poison damage.</li>
+			<li>You are immune to disease.</li>
+			<li>You don’t need to eat, drink, or breathe.</li>
+			<li>You don’t need to sleep and don’t suffer the effects of exhaustion due to lack of rest, and magic can’t put you to sleep.</li>
+		</ul>
+	</p>
+    </description>
+    <sheet>
+    <description>You have advantage on saving throws against being poisoned, and you have resistance to poison damage. You are immune to disease. You don’t need to eat, drink, or breathe. You don’t need to sleep and don’t suffer the effects of exhaustion due to lack of rest, and magic can’t put you to sleep.</description>
+    </sheet>
+    <rules>    
+    </rules>
+  </element>
+  <element name="Sentry's Rest" type="Racial Trait" source="Unearthed Arcana: Eberron" id="ID_WOTC_UA_RACIAL_TRAIT_SENTRYS_REST">
+    <description>
+    <p>When you take a long rest, you must spend at least six hours of it in an inactive, motionless state, rather than sleeping. In this state, you appear inert, but it doesn’t render you unconscious, and you can see and hear as normal.</p>
+    </description>
+    <sheet>
+    <description>When you take a long rest, you must spend at least six hours of it in an inactive, motionless state, rather than sleeping.</description>
+    </sheet>
+    <rules />
+  </element>
+  
+    <element name="Integrated Protection" type="Racial Trait" source="Unearthed Arcana: Eberron" id="ID_WOTC_UA_RACIAL_TRAIT_INTEGRATED_PROTECTION">
+    <description>
+    <p>Your body has built-in protective layers, which determine your Armor Class. You gain no benefit from wearing armor, but if you are using a shield, you apply its bonus as normal. You can alter your body to enter different defensive modes; each time you finish a long rest, choose one mode to adopt from the Integrated Protection table, provided you meet the mode’s prerequisite.</p>
+    </description>
+    <sheet>
+    <description>When you take a long rest, you must spend at least six hours of it in an inactive, motionless state, rather than sleeping.</description>
+    </sheet>
+    <rules />
+  </element>
+
+</elements>	
