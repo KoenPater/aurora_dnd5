@@ -4,7 +4,7 @@
 		<name>Warforged</name>
 		<description></description>
 		<author url="http://dnd.wizards.com">Wizards of the Coast</author>
-		<update version="0.1.7">
+		<update version="0.1.9">
 			<file name="race-warforged.xml" url="https://raw.githubusercontent.com/KoenPater/aurora_dnd5/master/core/players-handbook/race-warforged.xml" />
 		</update>
 	</info>
@@ -69,6 +69,7 @@
     <description>You have advantage on saving throws against being poisoned, and you have resistance to poison damage. You are immune to disease. You don’t need to eat, drink, or breathe. You don’t need to sleep and don’t suffer the effects of exhaustion due to lack of rest, and magic can’t put you to sleep.</description>
     </sheet>
     <rules>    
+		<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_POISON" />
     </rules>
   </element>
   <element name="Sentry's Rest" type="Racial Trait" source="Unearthed Arcana: Eberron" id="ID_WOTC_UA_RACIAL_TRAIT_SENTRYS_REST">
@@ -79,8 +80,7 @@
     <description>When you take a long rest, you must spend at least six hours of it in an inactive, motionless state, rather than sleeping.</description>
     </sheet>
     <rules />
-  </element>
-  
+  </element>  
     <element name="Integrated Protection" type="Racial Trait" source="Unearthed Arcana: Eberron" id="ID_WOTC_UA_RACIAL_TRAIT_INTEGRATED_PROTECTION">
     <description>
     <p>Your body has built-in protective layers, which determine your Armor Class. You gain no benefit from wearing armor, but if you are using a shield, you apply its bonus as normal. You can alter your body to enter different defensive modes; each time you finish a long rest, choose one mode to adopt from the Integrated Protection table, provided you meet the mode’s prerequisite.</p>
@@ -88,7 +88,17 @@
     <sheet>
     <description>When you take a long rest, you must spend at least six hours of it in an inactive, motionless state, rather than sleeping.</description>
     </sheet>
-    <rules />
+    <rules>
+		<stat name="ac:unarmored defense warforged:base" value="13" />
+		<stat name="ac:unarmored defense warforged:dexterity" value="dexterity:modifier" />
+		<stat name="ac:unarmored defense warforged:proficiency" value="proficiency" />
+
+		<stat name="ac:unarmored defense warforged" value="ac:unarmored defense warforged:base" />
+		<stat name="ac:unarmored defense warforged" value="ac:unarmored defense warforged:dexterity" />
+		<stat name="ac:unarmored defense warforged" value="ac:unarmored defense warforged:proficiency" />
+
+		<stat name="ac:calculation" value="ac:unarmored defense warforged" bonus="calculation" equipped="[armor:none]" alt="Integrated Protection (warforged)" />
+	</rules>
   </element>
 
 </elements>	
