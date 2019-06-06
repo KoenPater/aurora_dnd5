@@ -4,8 +4,8 @@
     <name>Warlock</name>
     <description>The Warlock class from the Player’s Handbook.</description>
     <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-    <update version="0.3.3">
-      <file name="class-warlock.xml" url="https://raw.githubusercontent.com/KoenPater/aurora_dnd5/master/core/players-handbook/classes/class-warlock.xml" />
+    <update version="0.3.5">
+      <file name="class-warlock.xml" url="https://raw.githubusercontent.com/KoenPater/aurora_dnd5/master/core/players-handbook/class-warlock.xml" />
     </update>
   </info>
   <!-- Warlock Class -->
@@ -280,10 +280,10 @@
     <requirements>ID_PHB_SPELL_ELDRITCH_BLAST</requirements>
     <description>
       <p class="flavor">Prerequisite: eldritch blast cantrip</p>
-      <p>When you cast eldritch blast, add your Charisma modifier to the damage it deals on a hit.</p>
+      <p>When you cast eldritch blast, you can choose to take a -5 penalty to the attack roll. If the attack hits, you add +10 to the attack’s damage.</p>
     </description>
     <sheet>
-      <description>When you cast eldritch blast, add your Charisma modifier (+{{charisma:modifier}}) to the damage it deals on a hit.</description>
+      <description>When you cast eldritch blast, you can choose to take a -5 penalty to the attack roll. If the attack hits, you add +10 to the attack’s damage.</description>
     </sheet>
     <rules />
   </element>
@@ -744,15 +744,20 @@
     <requirements />
     <description>
       <p>You can use your action to create a pact weapon in your empty hand. You can choose the form that this melee weapon takes each time you create it. You are proficient with it while you wield it. This weapon counts as magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage.</p>
+	  <p class="indent">When you attack with the pact weapon, you can use your Charisma modifier, instead of Strength or Dexterity, for the attack and damage rolls.</p>
       <p class="indent">Your pact weapon disappears if it is more than 5 feet away from you for 1 minute or more. It also disappears if you use this feature again, if you dismiss the weapon (no action required), or if you die.</p>
       <p class="indent">You can transform one magic weapon into your pact weapon by performing a special ritual while you hold the weapon. You perform the ritual over the course of 1 hour, which can be done during a short rest. You can then dismiss the weapon, shunting it into an extradimensional space, and it appears whenever you create your pact weapon thereafter. You can’t affect an artifact or a sentient weapon in this way. The weapon ceases being your pact weapon if you die, if you perform the 1-hour ritual on a different weapon, or if you use a 1-hour ritual to break your bond to it. The weapon appears at your feet if it is in the extradimensional space when the bond breaks.</p>
     </description>
     <sheet usage="Action">
-      <description>Create a pact weapon in your empty hand. This weapon counts as magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage.
+      <description>Create a pact weapon in your empty hand. This weapon counts as magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage. When you attack with the pact weapon, you can use your Charisma modifier, instead of Strength or Dexterity, for the attack and damage rolls.
 	  Your pact weapon disappears if it is more than 5 feet away from you for 1 minute or more. It also disappears if you use this feature again, if you dismiss the weapon (no action required), or if you die.
 	  You can transform one magic weapon into your pact weapon by performing a special ritual while you hold the weapon. You perform the ritual over the course of 1 hour, which can be done during a short rest. You can then dismiss the weapon, shunting it into an extradimensional space, and it appears whenever you create your pact weapon thereafter. You can’t affect an artifact or a sentient weapon in this way. The weapon ceases being your pact weapon if you die, if you perform the 1-hour ritual on a different weapon, or if you use a 1-hour ritual to break your bond to it. The weapon appears at your feet if it is in the extradimensional space when the bond breaks.</description>
     </sheet>
-    <rules />
+	<rules>
+	  <stat name="hex warrior:attack" value="charisma:modifier" bonus="ability" />
+      <stat name="hex warrior:attack" value="proficiency" bonus="proficiency" />
+      <stat name="hex warrior:damage" value="charisma:modifier" bonus="ability" />
+    </rules>
   </element>
 
   <!-- Otherworldly Patrons -->
@@ -966,7 +971,7 @@
     <requirements />
     <description>
       <p>Your patron is a mysterious entity whose nature is utterly foreign to the fabric of reality. It might come from the Far Realm, the space beyond reality, or it could be one of the elder gods known only in legends. Its motives are incomprehensible to mortals, and its knowledge so immense and ancient that even the greatest libraries pale in comparison to the vast secrets it holds. The Great Old One might be unaware of your existence or entirely indifferent to you, but the secrets you have learned allow you to draw your magic from it.</p>
-      <p class="indent">Entities of this type include Ghaunadar, called That Which Lurks; Tharizdun, the Chained God; Dendar, the Night Serpent; Zargon, the Returner; Great Cthulhu; and other unfathomable beings.</p>
+      <p class="indent">Entities of this type include Ghaunadar, called That Which Lurks; Tharizdun, the Chained God; Dendar, the Night Serpent; Zargon, the Returner; and other unfathomable beings.</p>
       <div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_GREATOLDONE_EXPANDED_SPELL_LIST"/>
       <div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_GREATOLDONE_AWAKEND_MIND"/>
       <div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_GREATOLDONE_ENTROPIC_WARD"/>
@@ -1056,5 +1061,355 @@
       <description>You can use your action to touch an incapacitated humanoid. That creature is then charmed by you until a remove curse spell is cast on it, the charmed condition is removed from it, or you use this feature again. You can communicate telepathically with the charmed creature as long as the two of you are on the same plane of existence.</description>
     </sheet>
     <rules />
+  </element>
+  
+    <!-- The Undying -->
+    <element name="The Undying" type="Archetype" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_UNDYING">
+    <supports>Otherworldly Patron</supports>
+    <description>
+      <p>Death holds no sway over your patron, who has unlocked the secrets of everlasting life, although such a prize- like all power- comes at a price. Once mortal, the Undying has seen mortal lifetimes pass like the seasons, like the flicker of endless days and nights. It has the secrets of the ages to share, secrets of life and death. Beings of this sort include Vecna, Lord of the Hand and the Eye; the dread Iuz; the lich-queen Vol; the Undying Court of Aerenal; Vlaakith, lich-queen of the githyanki; and the deathless wizard Fistandantalus.</p>
+      <p class="indent">In the Realms, Undying patrons include Larloch the Shadow King, legendary master of Warlock's Crypt, and Gilgeam, the God-King of Unther.</p>
+      <div element="ID_WOTC_SCAG_ARCHETYPE_FEATURE_UNDYING_EXPANDED_SPELL_LIST" />
+      <div element="ID_WOTC_SCAG_ARCHETYPE_FEATURE_UNDYING_AMONG_THE_DEAD" />
+      <div element="ID_WOTC_SCAG_ARCHETYPE_FEATURE_UNDYING_DEFY_DEATH" />
+      <div element="ID_WOTC_SCAG_ARCHETYPE_FEATURE_UNDYING_UNDYING_NATURE" />
+      <div element="ID_WOTC_SCAG_ARCHETYPE_FEATURE_UNDYING_INDESTRUCTABLE_LIFE" />
+    </description>
+    <sheet>
+      <description>Death holds no sway over your patron, who has unlocked the secrets of everlasting life, although such a prize- like all power- comes at a price.</description>
+    </sheet>
+    <rules>
+      <grant type="Archetype Feature" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_UNDYING_EXPANDED_SPELL_LIST" level="1"/>
+      <grant type="Archetype Feature" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_UNDYING_AMONG_THE_DEAD" level="1"/>
+      <grant type="Archetype Feature" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_UNDYING_DEFY_DEATH" level="6"/>
+      <grant type="Archetype Feature" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_UNDYING_UNDYING_NATURE" level="10"/>
+      <grant type="Archetype Feature" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_UNDYING_INDESTRUCTABLE_LIFE" level="14"/>
+    </rules>
+  </element>
+  <element name="Expanded Spell List" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_UNDYING_EXPANDED_SPELL_LIST">
+    <description>
+      <p>The Undying lets you choose from an expanded list of spells when you learn a warlock spell. The following spells are added to the warlock spell list for you.</p>
+      <h5>Undying Expanded Spells</h5>
+      <table>
+        <thead>
+          <tr><td>Spell Level</td><td>Spells</td></tr>
+        </thead>
+          <tr><td>1st</td><td><em>false life, ray of sickness</em></td></tr>
+          <tr><td>2nd</td><td><em>blindness/deafness, silence</em></td></tr>
+          <tr><td>3rd</td><td><em>feign death, speak with dead</em></td></tr>
+          <tr><td>4th</td><td><em>aura of life, death ward</em></td></tr>
+          <tr><td>5th</td><td><em>contagion, legend lore</em></td></tr>
+      </table>
+    </description>
+    <sheet>
+      <description>The Undying lets you choose from an expanded list of spells when you learn a warlock spell.</description>
+    </sheet>
+    <spellcasting name="Warlock" extend="true">
+      <extend>ID_PHB_SPELL_FALSE_LIFE</extend>
+      <extend>ID_PHB_SPELL_RAY_OF_SICKNESS</extend>
+      <extend>ID_PHB_SPELL_BLINDNESS_DEAFNESS</extend>
+      <extend>ID_PHB_SPELL_SILENCE</extend>
+      <extend>ID_PHB_SPELL_FEIGN_DEATH</extend>
+      <extend>ID_PHB_SPELL_SPEAK_WITH_DEAD</extend>
+      <extend>ID_PHB_SPELL_AURA_OF_LIFE</extend>
+      <extend>ID_PHB_SPELL_DEATH_WARD</extend>
+      <extend>ID_PHB_SPELL_CONTAGION</extend>
+      <extend>ID_PHB_SPELL_LEGEND_LORE</extend>
+    </spellcasting>
+  </element>
+  <element name="Among the Dead" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_UNDYING_AMONG_THE_DEAD">
+    <description>
+      <p>Starting at 1st level, you learn the spare the dying cantrip, which counts as a warlock cantrip for you. You also have advantage on saving throws against any disease.</p>
+      <p class="indent">Additionally, undead have difficulty harming you. If an undead targets you directly with an attack or a harmful spell, that creature must make a Wisdom saving throw against your spell save DC (an undead needn't make the save when it includes you in an area effect, such as the explosion of fireball). On a failed save, the creature must choose a new target or forfeit targeting someone instead of you, potentially wasting the attack or spell. On a successful save, the creature is immune to this effect for 24 hours. An undead is also immune to this effect for 24 hours if you target it with an attack or a harmful spell.</p>
+    </description>
+    <sheet>
+      <description>You have advantage on saving throws against any disease. If an undead targets you directly with an attack or a harmful spell, that creature must make a DC{{spellcasting:dc:wis}} Wisdom saving throw. On a failed save, the creature must choose a new target or forfeit targeting someone instead of you, potentially wasting the attack or spell.</description>
+    </sheet>
+    <rules>
+      <grant type="Spell" id="ID_PHB_SPELL_SPARE_THE_DYING" spellcasting="Warlock" />
+    </rules>
+  </element>
+  <element name="Defy Death" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_UNDYING_DEFY_DEATH">
+    <description>
+      <p>Starting at 6th level, you can give yourself vitality when you cheat death or when you help someone else cheat it. You can regain hit points equal to 1d8 + your Constitution modifier (minimum of 1 hit point) when you succeed on a death saving throw or when you stabilize a creature with spare the dying.</p>
+      <p class="indent">Once you use this feature, you can't use it again until you finish a long rest.</p>
+    </description>
+    <sheet usage="1/Long Rest">
+      <description>You can regain hit points equal to 1d8+{{defy death:modifier} when you succeed on a death saving throw or when you stabilize a creature with spare the dying.</description>
+    </sheet>
+    <rules>
+      <stat name="defy death:modifier" value="1" bonus="defy death" />
+      <stat name="defy death:modifier" value="constitution:modifier" bonus="defy death" />
+    </rules>
+  </element>
+  <element name="Undying Nature" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_UNDYING_UNDYING_NATURE">
+    <description>
+      <p>Beginning at 10th level, you can hold your breath indefinitely, and you don't require food, water, or sleep, although you still require rest to reduce exhaustion and still benefit from finishing short and long rests.</p>
+      <p class="indent">In addition, you age at a slower rate. For every 10 years that pass, your body ages only 1 year, and you are immune to being magically aged.</p>
+    </description>
+    <sheet>
+      <description>You can hold your breath indefinitely, and you don't require food, water, or sleep, although you still require rest to reduce exhaustion and still benefit from finishing short and long rests. In addition, you age at a slower rate. For every 10 years that pass, your body ages only 1 year, and you are immune to being magically aged.</description>
+    </sheet>
+    <rules />
+  </element>
+  <element name="Indestructable Life" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_UNDYING_INDESTRUCTABLE_LIFE">
+    <description>
+      <p>When you reach 14th level, you partake of some of the true secrets of the Undying. On your turn, you can use a bonus action to regain hit points equal to 1d8 + your warlock level. Additionally, if you put a severed body part of yours back in place when you use this feature, the part reattaches.</p>
+      <p class="indent">Once you use this feature, you can't use it again until you finish a short or long rest.</p>
+    </description>
+    <sheet usage="1/Short Rest">
+      <description>On your turn, you can use a bonus action to regain hit points equal to 1d8+{{level:warlock}}. Additionally, if you put a severed body part of yours back in place when you use this feature, the part reattaches.</description>
+    </sheet>
+    <rules />
+  </element>
+  
+  
+    <!-- The Celestial -->
+    <element name="The Celestial" type="Archetype" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_CELESTIAL">
+    <supports>Otherworldly Patron</supports>
+    <requirements />
+    <description>
+      <p>Your patron is a powerful being of the Upper Planes. You have bound yourself to an ancient empyrean, solar, ki-rin, or unicorn or to another entity that resides in the planes of everlasting bliss. Your pact with that being allows you to experience the barest touch of the holy light that illuminates the multiverse.</p>
+      <p class="indent">Being connected to such power can cause changes in your behavior and beliefs. You might find yourself driven to annihilate the undead, to defeat fiends, and to protect the innocent. At times, your heart might also be filled with a longing for the celestial realm of your patron, a desire to wander that paradise for the rest of your days. But you know that your mission is among mortals for now and that your pact binds you to bring light to the dark places of the world.</p>
+      <div element="ID_WOTC_XGTE_ARCHETYPE_FEATURE_CELESTIAL_EXPANDED_SPELL_LIST" />
+      <div element="ID_WOTC_XGTE_ARCHETYPE_FEATURE_CELESTIAL_BONUS_CANTRIPS" />
+      <div element="ID_WOTC_XGTE_ARCHETYPE_FEATURE_CELESTIAL_HEALING_LIGHT" />
+      <div element="ID_WOTC_XGTE_ARCHETYPE_FEATURE_CELESTIAL_RADIANT_SOUL" />
+      <div element="ID_WOTC_XGTE_ARCHETYPE_FEATURE_CELESTIAL_CELESTIAL_RESILIENCE" />
+      <div element="ID_WOTC_XGTE_ARCHETYPE_FEATURE_CELESTIAL_SEARING_VENGANCE" />
+    </description>
+    <sheet>
+      <description>You have made your pact with a mysterious entity from the Shadowfell.</description>
+    </sheet>
+    <rules>
+      <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_CELESTIAL_EXPANDED_SPELL_LIST" level="1"/>
+      <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_CELESTIAL_BONUS_CANTRIPS" level="1"/>
+      <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_CELESTIAL_HEALING_LIGHT" level="1"/>
+      <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_CELESTIAL_RADIANT_SOUL" level="6"/>
+      <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_CELESTIAL_CELESTIAL_RESILIENCE" level="10"/>
+      <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_CELESTIAL_SEARING_VENGANCE" level="14"/>
+    </rules>
+  </element>
+  <element name="Expanded Spell List" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_CELESTIAL_EXPANDED_SPELL_LIST">
+    <supports>Warlock</supports>
+    <requirements />
+    <description>
+      <p>The Celestial lets you choose from an expanded list of spells when you learn a warlock spell. The following spells are added to the warlock spell list for you.</p>
+      <h5>CELESTIAL EXPANDED SPELLS</h5>
+      <table>
+        <thead>
+          <tr><td>Spell Level</td><td>Spells</td></tr>
+        </thead>
+        <tr><td>1st</td><td><em>guiding bolt, cure wounds</em></td></tr>
+        <tr><td>2nd</td><td><em>flaming sphere, lesser restoration</em></td></tr>
+        <tr><td>3rd</td><td><em>daylight, revivify</em></td></tr>
+        <tr><td>4th</td><td><em>guardian of faith, wall of fire</em></td></tr>
+        <tr><td>5th</td><td><em>flame strike, greater restoration</em></td></tr>
+      </table>
+    </description>
+    <sheet display="false">
+      <description>The Celestial lets you choose from an expanded list of spells when you learn a warlock spell.</description>
+    </sheet>
+    <spellcasting name="Warlock" extend="true">
+      <extend>ID_PHB_SPELL_GUIDING_BOLT</extend>
+      <extend>ID_PHB_SPELL_CURE_WOUNDS</extend>
+      <extend>ID_PHB_SPELL_FLAMING_SPHERE</extend>
+      <extend>ID_PHB_SPELL_LESSER_RESTORATION</extend>
+      <extend>ID_PHB_SPELL_DAYLIGHT</extend>
+      <extend>ID_PHB_SPELL_REVIVIFY</extend>
+      <extend>ID_PHB_SPELL_GUARDIAN_OF_FAITH</extend>
+      <extend>ID_PHB_SPELL_WALL_OF_FIRE</extend>
+      <extend>ID_PHB_SPELL_FLAME_STRIKE</extend>
+      <extend>ID_PHB_SPELL_GREATER_RESTORATION</extend>
+    </spellcasting>
+    <rules></rules>
+  </element>
+  <element name="Bonus Cantrips" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_CELESTIAL_BONUS_CANTRIPS">
+    <description>
+      <p>At 1st level, you learn the <i>sacred flame</i> and <i>light</i> cantrips. They count as warlock cantrips for you, but they don’t count against your number of cantrips known.</p>
+    </description>
+    <sheet>
+      <description>You gain the sacred flame and light cantrips.</description>
+    </sheet>
+    <rules>
+      <grant type="Spell" id="ID_PHB_SPELL_SACRED_FLAME" level="1" spellcasting="Warlock" />
+      <grant type="Spell" id="ID_PHB_SPELL_LIGHT" level="1" spellcasting="Warlock" />
+    </rules>
+  </element>
+  <element name="Healing Light" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_CELESTIAL_HEALING_LIGHT">
+    <description>
+      <p>At 1st level, you gain the ability to channel celestial energy to heal wounds. You have a pool of d6s that you spend to fuel this healing. The number of dice in the pool equals 1 + your warlock level.</p>
+      <p class="indent">As a bonus action, you can heal one creature you can see within 60 feet of you, spending dice from the pool. The maximum number of dice you can spend at once equals your Charisma modifier (minimum of one die). Roll the dice you spend, add them together, and restore a number of hit points equal to the total.</p>
+      <p class="indent">Your pool regains all expended dice when you finish a long rest.</p>
+    </description>
+    <sheet>
+      <description>As a bonus action, you can use {{healing light:dice pool}} d6s to heal an ally you can see within 60 feet. The maximum number of dice you can use at once is {{healing light:max uses}}.</description>
+    </sheet>
+    <rules>
+      <stat name="healing light:dice pool" value="level:warlock" />
+      <stat name="healing light:dice pool" value="1" />
+      <stat name="healing light:max uses" value="charisma:modifier" />
+    </rules>
+  </element>
+  <element name="Radiant Soul" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_CELESTIAL_RADIANT_SOUL">
+    <description>
+      <p>Starting at 6th level, your link to the Celestial allows you to serve as a conduit for radiant energy. You have resistance to radiant damage, and when you cast a spell that deals radiant or fire damage, you can add your Charisma modifier to one radiant or fire damage roll of that spell against one of its targets. </p>
+    </description>
+    <sheet>
+      <description>You gain resistance to radiant damage. You can add +{{radiant soul:attack bonus}} to one radiant or fire damage roll against one target.</description>
+    </sheet>
+    <rules>
+      <stat name="radiant soul:attack bonus" value="charisma:modifier" />
+      <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_RADIANT" />
+    </rules>
+  </element>
+  <element name="Celestial Resilience" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_CELESTIAL_CELESTIAL_RESILIENCE">
+    <description>
+      <p>Starting at 10th level, you gain temporary hit points whenever you finish a short or long rest. These temporary hit points equal your warlock level + your Charisma modifier. Additionally, choose up to five creatures you can see at the end of the rest. Those creatures each gain temporary hit points equal to half your warlock level + your Charisma modifier.</p>
+    </description>
+    <sheet>
+      <description>After a short or long rest, you gain {{celestial resilience:temp hp}} temporary hit points. You can also give {{celestial resilience:ally temp hp}} temporary hit points to a maximum of five creatures.</description>
+    </sheet>
+    <rules>
+      <stat name="celestial resilience:temp hp" value="level:warlock" />
+      <stat name="celestial resilience:temp hp" value="charisma:modifier" />
+      <stat name="celestial resilience:ally temp hp" value="level:warlock:half" />
+      <stat name="celestial resilience:ally temp hp" value="charisma:modifier" />
+    </rules>
+  </element>
+  <element name="Searing Vengance" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_CELESTIAL_SEARING_VENGANCE">
+    <description>
+      <p>Starting at 14th level, the radiant energy you channel allows you to resist death. When you have to make a death saving throw at the start of your turn, you can instead spring back to your feet with a burst of radiant energy. You regain hit points equal to half your hit point maximum, and then you stand up if you so choose. Each creature of your choice that is within 30 feet of you takes radiant damage equal to 2d8 + your Charisma modifier, and it is blinded until the end of the current turn. </p>
+      <p class="indent">Once you use this feature, you can’t use it again until you finish a long rest.</p>
+    </description>
+    <sheet>
+      <description> When you make a death saving throw at the start of your turn, you can instead regain half of your hit points maximum, stand to your feet if you so choose, and deal 2d8+{{searing vengance:damage}} to each creature of your choice within 30 feet, blinding them until the end of your turn.</description>
+    </sheet>
+    <rules>
+      <stat name="searing vengance:damage" value="charisma:modifier" />
+    </rules>
+  </element>
+  
+  
+    <!-- The Hexblade -->  
+    <element name="The Hexblade" type="Archetype" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_HEXBLADE">
+    <supports>Otherworldly Patron</supports>
+    <requirements />
+    <description>
+      <p>You have made your pact with a mysterious entity from the Shadowfell—a force that manifests in sentient magic weapons carved from the stuff of shadow. The mighty sword Blackrazor is the most notable of these weapons, which have been spread across the multiverse over the ages. The shadowy force behind these weapons can offer power to warlocks who form pacts with it. Many hexblade warlocks create weapons that emulate those formed in the Shadowfell. Others forgo such arms, content to weave the dark magic of that plane into their spellcasting.</p>
+      <p class="indent">Because the Raven Queen is known to have forged the first of these weapons, many sages speculate that she and the force are one and that the weapons, along with hexblade warlocks, are tools she uses to manipulate events on the Material Plane to her inscrutable ends. </p>
+      <div element="ID_WOTC_XGTE_ARCHETYPE_FEATURE_HEXBLADE_EXPANDED_SPELL_LIST" />
+      <div element="ID_WOTC_XGTE_ARCHETYPE_FEATURE_HEXBLADE_HEXBLADES_CURSE" />
+      <div element="ID_WOTC_XGTE_ARCHETYPE_FEATURE_HEXBLADE_HEX_WARRIOR" />
+      <div element="ID_WOTC_XGTE_ARCHETYPE_FEATURE_HEXBLADE_ACCURSED_SPECTER" />
+      <div element="ID_WOTC_XGTE_ARCHETYPE_FEATURE_HEXBLADE_ARMOR_OF_HEXES" />
+      <div element="ID_WOTC_XGTE_ARCHETYPE_FEATURE_HEXBLADE_MASTER_OF_HEXES" />
+    </description>
+    <sheet>
+      <description>You have made your pact with a mysterious entity from the Shadowfell.</description>
+    </sheet>
+    <rules>
+      <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_HEXBLADE_EXPANDED_SPELL_LIST" level="1"/>
+      <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_HEXBLADE_HEXBLADES_CURSE" level="1"/>
+      <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_HEXBLADE_HEX_WARRIOR" level="1"/>
+      <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_HEXBLADE_ACCURSED_SPECTER" level="6"/>
+      <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_HEXBLADE_ARMOR_OF_HEXES" level="10"/>
+      <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_HEXBLADE_MASTER_OF_HEXES" level="14"/>
+    </rules>
+  </element>
+  <element name="Expanded Spell List" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_HEXBLADE_EXPANDED_SPELL_LIST">
+    <supports>Warlock</supports>
+    <requirements />
+    <description>
+      <p>The Hexblade lets you choose from an expanded list of spells when you learn a warlock spell. The following spells are added to the warlock spell list for you.</p>
+      <h5>HEXBLADE EXPANDED SPELLS</h5>
+      <table>
+        <thead>
+          <tr><td>Spell Level</td><td>Spells</td></tr></thead>
+          <tr><td>1st</td><td><em>shield, wrathful smite</em></td></tr>
+          <tr><td>2nd</td><td><em>blur, branding smite</em></td></tr>
+          <tr><td>3rd</td><td><em>blink, elemental weapon</em></td></tr>
+          <tr><td>4th</td><td><em>phantasmal killer, staggering smite</em></td></tr>
+          <tr><td>5th</td><td><em>banishing smite, cone of cold</em></td></tr>
+        </table>
+      </description>
+    <sheet display="false">
+      <description>The Hexblade lets you choose from an expanded list of spells when you learn a warlock spell.</description>
+    </sheet>
+    <spellcasting name="Warlock" extend="true">
+      <extend>ID_PHB_SPELL_SHIELD</extend>
+      <extend>ID_PHB_SPELL_WRATHFUL_SMITE</extend>
+      <extend>ID_PHB_SPELL_BLUR</extend>
+      <extend>ID_PHB_SPELL_BRANDING_SMITE</extend>
+      <extend>ID_PHB_SPELL_BLINK</extend>
+      <extend>ID_PHB_SPELL_ELEMENTAL_WEAPON</extend>
+      <extend>ID_PHB_SPELL_PHANTASMAL_KILLER</extend>
+      <extend>ID_PHB_SPELL_STAGGERING_SMITE</extend>
+      <extend>ID_PHB_SPELL_BANISHING_SMITE</extend>
+      <extend>ID_PHB_SPELL_CONE_OF_COLD</extend>
+    </spellcasting>
+  </element>
+  <element name="Hexblade’s Curse" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_HEXBLADE_HEXBLADES_CURSE">
+    <description>
+      <p>Starting at 1st level, you gain the ability to place a baleful curse on someone. As a bonus action, choose one creature you can see within 30 feet of you. The target is cursed for 1 minute. The curse ends early if the target dies, you die, or you are incapacitated. Until the curse ends, you gain the following benefits:</p>
+      <ul>
+        <li>You gain a bonus to damage rolls against the cursed target. The bonus equals your proficiency bonus.</li>
+        <li>Any attack roll you make against the cursed target is a critical hit on a roll of 19 or 20 on the d20.</li>
+        <li>If the cursed target dies, you regain hit points equal to your warlock level + your Charisma modifier (minimum of 1 hit point).</li>
+      </ul>
+      <p class="indent">You can’t use this feature again until you finish a short or long rest.</p>
+    </description>
+    <sheet action="Bonus Action">
+      <description>Choose one creature you can see within 30ft. The target is cursed for 1 minute. Until the curse ends, you gain the following benefits: 
+	  You gain a +{{proficiency}} bonus to damage rolls against the cursed target and any attack roll you make against the cursed target is a critical hit on a roll of 19 or 20 on the d20.
+	  If the cursed target dies, you regain {{hexblades curse:hp}} hit points.</description>
+    </sheet>
+    <rules>
+      <stat name="hexblades curse:hp" value="charisma:modifier" />
+      <stat name="hexblades curse:hp" value="level:warlock" />
+    </rules>
+  </element>
+  <element name="Hex Warrior" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_HEXBLADE_HEX_WARRIOR">
+    <description>
+      <p>At 1st level, you acquire the training necessary to effectively arm yourself for battle. You gain proficiency with medium armor, shields, and martial weapons.</p>
+    </description>	
+    <sheet>
+      <description>Whenever you finish a long rest, you can touch one weapon that you are proficient with and that lacks the two-handed property. When you attack with that weapon, you can use +{{hex warrior:attack}} for the attack and +{{hex warrior:damage}} damage.</description>
+    </sheet>
+    <rules>
+      <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" />
+      <grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_SHIELDS" />
+      <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_WEAPONS" />
+    </rules>
+  </element>
+  <element name="Accursed Specter" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_HEXBLADE_ACCURSED_SPECTER">
+    <description>
+      <p>Starting at 6th level, you can curse the soul of a person you slay, temporarily binding it to your service. When you slay a humanoid, you can cause its Spirit to rise from its corpse as a specter, the statistics for which are in the Monster Manual. When the specter appears, it gains temporary hit points equal to half your warlock level. Roll initiative for the specter, which has its own turns. It obeys your verbal commands, and it gains a special bonus to its attack rolls equal to your Charisma modifier (minimum of +0). </p>
+      <p class="indent">The specter remains in your service until the end of your next long rest, at which point it vanishes to the afterlife.</p>
+      <p class="indent">Once you bind a specter with this feature, you can’t use the feature again until you finish a long rest. </p>
+    </description>
+    <sheet>
+      <description>You can curse the soul of humanoid you slay turning it into a Spirit (see Monster Manual for it’s statistics), it gains {{accursed specter:temp hp}} temporary hit points and a +{{accursed specter:attack bonus}} bonus to attack rolls.</description>
+    </sheet>
+    <rules>
+      <stat name="accursed specter:attack bonus" value="charisma:modifier" />
+      <stat name="accursed specter:temp hp" value="level:warlock:half" />
+    </rules>
+  </element>
+  <element name="Armor of Hexes" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_HEXBLADE_ARMOR_OF_HEXES">
+    <description>
+      <p>At 10th level, your hex grows more powerful. If the target cursed by your Hexblade’s Curse hits you with an attack roll, you can use your reaction to roll a d6. On a 4 or higher, the attack instead misses you, regardless of its roll. </p>
+    </description>
+    <sheet>
+      <description>If the target cursed by your Hexblade’s Curse hits you with an attack roll, you can use your reaction to roll a d6. On a 4 or higher, the attack instead misses you, regardless of its roll. </description>
+    </sheet>
+  </element>
+  <element name="Master of Hexes" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_HEXBLADE_MASTER_OF_HEXES">
+    <description>
+      <p>Starting at 14th level, you can spread your Hexblade’s Curse from a slain creature to another creature. When the creature cursed by your Hexblade’s Curse dies, you can apply the curse to a different creature you can see within 30 feet of you, provided you aren’t incapacitated. When you apply the curse in this way, you don’t regain hit points from the death of the previously cursed creature. </p>
+    </description>
+    <sheet>
+      <description> When the target of your Hexblade’s Curse dies, you can spread it to another creature you see within 30 ft. </description>
+    </sheet>
   </element>
 </elements>
