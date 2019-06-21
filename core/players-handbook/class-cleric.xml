@@ -4,7 +4,7 @@
     <name>Cleric</name>
     <description>The Cleric class from the Player’s Handbook.</description>
     <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-    <update version="0.3.8">
+    <update version="0.4.0">
       <file name="class-cleric.xml" url="https://raw.githubusercontent.com/KoenPater/aurora_dnd5/master/core/players-handbook/class-cleric.xml" />
     </update>
   </info>
@@ -314,8 +314,8 @@
             <em>lesser restoration, spiritual weapon</em>
           </td>
         </tr>
-        <tr>
           <td>5th</td>
+        <tr>
           <td>
             <em>beacon of hope, revivify</em>
           </td>
@@ -1080,26 +1080,26 @@
   </element>
   <element name="Channel Divinity: Invoke Duplicity" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_TRICKERY_DOMAIN_CD_INVOKE_DUPLICITY">
     <description>
-      <p>Starting at 2nd level, you can use your Channel Divinity to create an illusory duplicate of yourself. As an action, you create a perfect illusion of yourself that lasts for 1 minute, or until you lose your concentration (as if you were concentrating on a spell).</p>
-      <p class="indent">The illusion appears in an unoccupied space that you can see within 30 feet of you. As a bonus action on your turn, you can move the illusion up to 30 feet to a space you can see, but it must remain within 120 feet of you.</p>
+      <p>Starting at 2nd level, you can use your Channel Divinity to create an illusory duplicate of yourself. As an action, you create a perfect illusion of yourself that lasts for 1 minute.</p>
+      <p class="indent">The illusion appears in an unoccupied space that you can see within 30 feet of you. As a bonus action on your turn, you can make the illusion move up to 30 feet to a space you can see, but it must remain within 120 feet of you. The illusion affects all senses except for touch. Physical interaction with the image reveals it to be an illusion, because things can pass through it. You can animate it and make it carry on a conversation. This does not require any actions, though you must be conscious.</p>
       <p class="indent">For the duration, you can cast spells as though you were in the illusion’s space, but you must use your own senses. Additionally, when both you and your illusion are within 5 feet of a creature that can see the illusion, you have advantage on attack rolls against that creature, given how distracting the illusion is to the target.</p>
     </description>
     <sheet alt="Invoke Duplicity" action="Action" usage="Channel Divinity">
-      <description>You create a perfect illusion of yourself that lasts for 1 minute, or until you lose your concentration.</description>
+      <description>You create a perfect illusion of yourself that lasts for 1 minute.</description>
     </sheet>
   </element>
   <element name="Channel Divinity: Cloak of Shadows" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_TRICKERY_DOMAIN_CD_CLOAK_OF_SHADOWS">
     <description>
       <p>Starting at 6th level, you can use your Channel Divinity to vanish.</p>
-      <p class="indent">As an action, you become invisible until the end of your next turn. You become visible if you attack or cast a spell.</p>
+      <p class="indent">As a bonus action, you become invisible until the end of your next turn, or until you lose your concentration (as if you were concentrating on a spell).</p>
     </description>
-    <sheet alt="Cloak of Shadows" action="Action" usage="Channel Divinity">
-      <description>You become invisible until the end of your next turn. You become visible if you attack or cast a spell.</description>
+    <sheet alt="Cloak of Shadows" action="Bonus Action" usage="Channel Divinity">
+      <description>You become invisible until the end of your next turn, or until you lose concentration.</description>
     </sheet>
   </element>
   <element name="Divine Strike" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_TRICKERY_DOMAIN_DIVINE_STRIKE">
     <description>
-      <p>At 8th level, you gain the ability to infuse your weapon strikes with poison—a gift from your deity. Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 poison damage to the target. When you reach 14th level, the extra damage increases to 2d8.</p>
+      <p>At 8th level, you gain the ability to infuse your weapon strikes with poison—a gift from your deity. Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 poison damage to the target. When you reach 14th level, the extra damage increases to 2d8.
     </description>
     <sheet>
       <description>Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 poison damage to the target.</description>
@@ -1112,7 +1112,7 @@
       <div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_TRICKERY_DOMAIN_CD_INVOKE_DUPLICITY" />
     </description>
     <sheet>
-      <description>AYou can create up to four duplicates of yourself, instead of one, when you use Invoke Duplicity.</description>
+      <description>You can create up to four duplicates of yourself, instead of one, when you use Invoke Duplicity.</description>
     </sheet>
   </element>
   <!-- War Domain -->
