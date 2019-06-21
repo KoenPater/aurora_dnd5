@@ -4,7 +4,7 @@
     <name>Druid</name>
     <description>The Druid class from the Player’s Handbook.</description>
     <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-    <update version="0.2.5">
+    <update version="0.2.8">
       <file name="class-druid.xml" url="https://raw.githubusercontent.com/KoenPater/aurora_dnd5/master/core/players-handbook/classes/class-druid.xml" />
     </update>
   </info>
@@ -261,10 +261,10 @@
   </element>
   <element name="Archdruid" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_DRUID_ARCHDRUID">
     <description>
-      <p>At 20th level, you can use your Wild Shape an unlimited number of times.</p>
+      <p>At 20th level, transforming to a creature with a challenge rating of 1 or lower does not expend a use of your Wild Shape feature.</p>
     </description>
     <sheet>
-      <description>You can use your Wild Shape an unlimited number of times.</description>
+      <description>At 20th level, transforming to a creature with a challenge rating of 1 or lower does not expend a use of your Wild Shape feature.</description>
     </sheet>
     <rules />
   </element>
@@ -737,21 +737,23 @@
   <element name="Combat Wild Shape" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_CIRCLE_MOON_COMBAT_WILD_SHAPE">
     <description>
       <p>When you choose this circle at 2nd level, you gain the ability to use Wild Shape on your turn as a bonus action, rather than as an action.</p>
-      <p class="indent">Additionally, while you are transformed by Wild Shape, you can use a bonus action to expend one spell slot to regain 1d8 hit points per level of the spell slot expended.</p>
+      <p class="indent">Additionally, while you are transformed by Wild Shape, you can use a bonus action to expend one spell slot to regain 1d12 hit points per level of the spell slot expended.</p>
     </description>
     <sheet>
-      <description>You gain the ability to use Wild Shape on your turn as a bonus action, rather than as an action. Additionally, while you are transformed by Wild Shape, you can use a bonus action to expend one spell slot to regain 1d8 hit points per level of the spell slot expended.</description>
+      <description>You gain the ability to use Wild Shape on your turn as a bonus action, rather than as an action. Additionally, while you are transformed by Wild Shape, you can use a bonus action to expend one spell slot to regain 1d12 hit points per level of the spell slot expended.</description>
     </sheet>
     <rules />
   </element>
   <element name="Circle Forms" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_CIRCLE_MOON_CIRCLE_FORMS">
     <description>
-      <p>The rites of your circle grant you the ability to transform into more dangerous animal forms. Starting at 2nd level, you can use your Wild Shape to transform into a beast with a challenge rating as high as 1 (you ignore the Max. CR column of the Beast Shapes table, but must abide by the other limitations there).</p>
-      <p class="indent">Starting at 6th level, you can transform into a beast with a challenge rating as high as your druid level divided by 3, rounded down.</p>
+      <p>The rites of your circle grant you the ability to transform into more dangerous animal forms. Starting at 2nd level, you can use your Wild Shape to transform into a beast with a challenge rating as high as 1/2 (you ignore the Max. CR column of the Beast Shapes table, but must abide by the other limitations there).</p>
+	  <p class="indent">Starting at 4th level, you can transform into a beast with a challenge rating as high as 1.</p>
+      <p class="indent">Starting at 8th level, you can transform into a beast with a challenge rating as high as your druid level divided by 3, rounded down.</p>
     </description>
     <sheet>
-      <description level="2">You can use your Wild Shape to transform into a beast with a challenge rating as high as 1</description>
-      <description level="6">You can transform into a beast with a challenge rating as high as your druid level divided by 3, rounded down.</description>
+      <description level="2">You can use your Wild Shape to transform into a beast with a challenge rating as high as 1/2</description>
+	  <description level="4">You can use your Wild Shape to transform into a beast with a challenge rating as high as 1</description>
+      <description level="8">You can transform into a beast with a challenge rating as high as your druid level divided by 3, rounded down.</description>
     </sheet>
     <rules />
   </element>
