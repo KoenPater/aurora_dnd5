@@ -4,7 +4,7 @@
     <name>Spells</name>
     <description>Spells from the Player’s Handbook.</description>
     <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-    <update version="0.3.4">
+    <update version="0.3.5">
       <file name="spells.xml" url="https://raw.githubusercontent.com/KoenPater/aurora_dnd5/master/core/players-handbook/spells.xml" />
     </update>
   </info>
@@ -5465,7 +5465,7 @@
       <set name="school">Conjuration</set>
       <set name="time">1 action</set>
       <set name="duration">Instantaneous</set>
-      <set name="range">10 feet</set>
+      <set name="range">15 feet</set>
       <set name="hasVerbalComponent">true</set>
       <set name="hasSomaticComponent">true</set>
       <set name="hasMaterialComponent">false</set>
@@ -6311,7 +6311,7 @@
   <element name="Shield" type="Spell" source="Player’s Handbook" id="ID_PHB_SPELL_SHIELD">
     <supports>Sorcerer, Wizard</supports>
     <description>
-      <p>Reaction trigger: You are hit by an attack or targeted by the magic missile spell An invisible barrier of magical force appears and protects you. Until the start of your next turn, you have a +5 bonus to AC, including against the triggering attack, and you take no damage from magic missile.</p>
+      <p>Reaction trigger: You are hit by an attack or targeted by the magic missile spell. An invisible barrier of magical force appears and protects you. Until the start of your next turn, you have a +5 bonus to AC, including against the triggering attack, and you take no damage from magic missile.</p>
     </description>
     <setters>
       <set name="keywords"></set>
@@ -6371,8 +6371,8 @@
   <element name="Shocking Grasp" type="Spell" source="Player’s Handbook" id="ID_PHB_SPELL_SHOCKING_GRASP">
     <supports>Sorcerer, Wizard</supports>
     <description>
-      <p>Lightning springs from your hand to deliver a shock to a creature you try to touch. Make a melee spell attack against the target. You have advantage on the attack roll if the target is wearing armor made of metal. On a hit, the target takes 1d8 lightning damage, and it can’t take reactions until the start of its next turn.</p>
-      <p class="indent">The spell’s damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8).</p>
+      <p>Lightning springs from your hand to deliver a shock to a creature you try to touch. Make a melee spell attack against the target. You have advantage on the attack roll if the target is wearing armor made of metal. On a hit, the target takes 1d10 lightning damage, and it can’t take reactions until the start of its next turn.</p>
+      <p class="indent">The spell’s damage increases by 1d10 when you reach 5th level (2d10), 11th level (3d10), and 17th level (4d10).</p>
     </description>
     <setters>
       <set name="keywords">lightning</set>
@@ -7263,7 +7263,7 @@
   <element name="True Strike" type="Spell" source="Player’s Handbook" id="ID_PHB_SPELL_TRUE_STRIKE">
     <supports>Bard, Sorcerer, Warlock, Wizard</supports>
     <description>
-      <p>You extend your hand and point a finger at a target in range. Your magic grants you a brief insight into the target’s defenses. On your next turn, you gain advantage on your first attack roll against the target, provided that this spell hasn’t ended.</p>
+      <p>You extend your hand and point a finger at a target in range. Your magic grants you a brief insight into the target’s defenses. On your next turn, you ignore all disadvantage and gain advantage on your first attack roll against the target, provided that this spell hasn’t ended.</p>
     </description>
     <setters>
       <set name="keywords"></set>
