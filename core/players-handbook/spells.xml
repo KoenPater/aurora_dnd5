@@ -4,7 +4,7 @@
     <name>Spells</name>
     <description>Spells from the Player’s Handbook.</description>
     <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-    <update version="0.3.9">
+    <update version="0.4.0">
       <file name="spells.xml" url="https://raw.githubusercontent.com/KoenPater/aurora_dnd5/master/core/players-handbook/spells.xml" />
     </update>
   </info>
@@ -6454,7 +6454,7 @@
   <element name="Sleep" type="Spell" source="Player’s Handbook" id="ID_PHB_SPELL_SLEEP">
     <supports>Bard, Sorcerer, Wizard</supports>
     <description>
-      <p>This spell sends creatures into a magical slumber. Roll 5d8, the total is how many hit points of creatures this spell can affect. Creatures within 20 feet of a point you choose within range are affected in ascending order of their current hit points (ignoring unconscious creatures).</p>
+      <p>This spell sends creatures into a magical slumber. Roll 4d8, the total is how many hit points of creatures this spell can affect. Creatures within 20 feet of a point you choose within range are affected in ascending order of their current hit points (ignoring unconscious creatures).</p>
 	  <p class="indent">Starting with the creature that has the lowest current hit points, each creature affected by this spell falls unconscious until the spell ends, the sleeper takes damage, or someone uses an action to shake or slap the sleeper awake. Subtract each creature’s hit points from the total before moving on to the creature with the next lowest hit points. A creature’s hit points must be equal to or less than the remaining total for that creature to be affected.</p>
 	  <p class="indent">Undead and creatures immune to being charmed aren’t affected by this spell.</p>
       <p class="indent"><b><i>At Higher Levels.</i></b> When you cast this spell using a spell slot of 2nd level or higher, roll an additional 2d8 for each slot level above 1st.</p>
@@ -7263,7 +7263,7 @@
   <element name="True Strike" type="Spell" source="Player’s Handbook" id="ID_PHB_SPELL_TRUE_STRIKE">
     <supports>Bard, Sorcerer, Warlock, Wizard</supports>
     <description>
-      <p>You extend your hand and point a finger at a target in range. Your magic grants you a brief insight into the target’s defenses. On your next turn, you ignore all disadvantage and gain advantage on your first attack roll against the target, provided that this spell hasn’t ended.</p>
+      <p>You extend your hand and point a finger at a target in range. Your magic grants you a brief insight into the target’s defenses. On your next turn, your first attack roll against the target gains advantage and ignores all disadvantage, provided that this spell hasn’t ended.</p>
     </description>
     <setters>
       <set name="keywords"></set>
