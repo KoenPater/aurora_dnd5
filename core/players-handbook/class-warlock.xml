@@ -4,7 +4,7 @@
     <name>Warlock</name>
     <description>The Warlock class from the Player’s Handbook.</description>
     <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-    <update version="0.3.7">
+    <update version="0.3.8">
       <file name="class-warlock.xml" url="https://raw.githubusercontent.com/KoenPater/aurora_dnd5/master/core/players-handbook/class-warlock.xml" />
     </update>
   </info>
@@ -1200,7 +1200,7 @@
         <thead>
           <tr><td>Spell Level</td><td>Spells</td></tr>
         </thead>
-        <tr><td>1st</td><td><em>guiding bolt, cure wounds</em></td></tr>
+        <tr><td>1st</td><td><em>guiding strike, cure wounds</em></td></tr>
         <tr><td>2nd</td><td><em>flaming sphere, lesser restoration</em></td></tr>
         <tr><td>3rd</td><td><em>daylight, revivify</em></td></tr>
         <tr><td>4th</td><td><em>guardian of faith, wall of fire</em></td></tr>
