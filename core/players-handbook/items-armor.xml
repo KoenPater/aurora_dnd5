@@ -4,7 +4,7 @@
 		<name>Armor</name>
 		<description></description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-		<update version="0.0.4">
+		<update version="0.0.7">
 			<file name="items-armor.xml" url="https://raw.githubusercontent.com/KoenPater/aurora_dnd5/master/core/players-handbook/items/items-armor.xml" />
 		</update>
 	</info>
@@ -109,6 +109,7 @@
 			<set name="weight" lb="45">45 lb.</set>
 			<set name="armor">Medium</set>
 			<set name="slot">body</set>
+			<set name="strength">13</set>
 			<set name="stealth">Disadvantage</set>
 			<set name="armorClass">14 + Dex modifier (max 2)</set>
 			<set name="proficiency">ID_PROFICIENCY_ARMOR_PROFICIENCY_SCALE_MAIL</set>
@@ -116,6 +117,7 @@
 		<rules>
 			<grant type="Grants" id="ID_INTERNAL_GRANTS_STEALTH_DISADVANTAGE" />
 			<stat name="ac:armored:armor" value="14" />
+			<stat name="speed" value="-10" bonus="armor" requirements="![str:13]" />			
 		</rules>
 	</element>
 	<element name="Breastplate" type="Armor" source="Player’s Handbook" id="ID_WOTC_ARMOR_MEDIUM_BREASTPLATE">
@@ -141,10 +143,11 @@
 			<p>Half plate consists of shaped metal plates that cover most of the wearer’s body. It does not include leg protection beyond simple greaves that are attached with leather straps.</p>
 		</description>
 		<setters>
-			<set name="cost" currency="gp">750</set>
+			<set name="cost" currency="gp">500</set>
 			<set name="weight" lb="40">40 lb.</set>
 			<set name="slot">body</set>
 			<set name="armor">Medium</set>
+			<set name="strength">13</set>
 			<set name="stealth">Disadvantage</set>
 			<set name="armorClass">15 + Dex modifier (max 2)</set>
 			<set name="proficiency">ID_PROFICIENCY_ARMOR_PROFICIENCY_HALF_PLATE</set>
@@ -152,6 +155,7 @@
 		<rules>
 			<grant type="Grants" id="ID_INTERNAL_GRANTS_STEALTH_DISADVANTAGE" />
 			<stat name="ac:armored:armor" value="15" />
+			<stat name="speed" value="-10" bonus="armor" requirements="![str:13]" />
 		</rules>
 	</element>
 
@@ -166,13 +170,15 @@
 			<set name="weight" lb="40">40 lb.</set>
 			<set name="slot">body</set>
 			<set name="armor">Heavy</set>
+			<set name="strength">13</set>
 			<set name="stealth">Disadvantage</set>
-			<set name="armorClass">14</set>
+			<set name="armorClass">15</set>
 			<set name="proficiency">ID_PROFICIENCY_ARMOR_PROFICIENCY_RING_MAIL</set>
 		</setters>
 		<rules>
 			<grant type="Grants" id="ID_INTERNAL_GRANTS_STEALTH_DISADVANTAGE" />
-			<stat name="ac:armored:armor" value="14" />
+			<stat name="ac:armored:armor" value="15" />
+			<stat name="speed" value="-10" bonus="armor" requirements="![str:13]" />
 		</rules>
 	</element>
 	<element name="Chain Mail" type="Armor" source="Player’s Handbook" id="ID_WOTC_ARMOR_HEAVY_CHAIN_MAIL">
@@ -185,15 +191,15 @@
 			<set name="weight" lb="55">55 lb.</set>
 			<set name="slot">body</set>
 			<set name="armor">Heavy</set>
-			<set name="strength">13</set>
+			<set name="strength">15</set>
 			<set name="stealth">Disadvantage</set>
-			<set name="armorClass">16</set>
+			<set name="armorClass">17</set>
 			<set name="proficiency">ID_PROFICIENCY_ARMOR_PROFICIENCY_CHAIN_MAIL</set>
 		</setters>
 		<rules>
 			<grant type="Grants" id="ID_INTERNAL_GRANTS_STEALTH_DISADVANTAGE" />
-			<stat name="ac:armored:armor" value="16" />
-			<stat name="speed" value="-10" bonus="armor" requirements="![str:13]" />
+			<stat name="ac:armored:armor" value="17" />
+			<stat name="speed" value="-10" bonus="armor" requirements="![str:15]" />
 		</rules>
 	</element>
 	<element name="Splint" type="Armor" source="Player’s Handbook" id="ID_WOTC_ARMOR_HEAVY_SPLINT">
@@ -206,15 +212,15 @@
 			<set name="weight" lb="60">60 lb.</set>
 			<set name="slot">body</set>
 			<set name="armor">Heavy</set>
-			<set name="strength">15</set>
+			<set name="strength">17</set>
 			<set name="stealth">Disadvantage</set>
-			<set name="armorClass">17</set>
+			<set name="armorClass">18</set>
 			<set name="proficiency">ID_PROFICIENCY_ARMOR_PROFICIENCY_SPLINT</set>
 		</setters>
 		<rules>
 			<grant type="Grants" id="ID_INTERNAL_GRANTS_STEALTH_DISADVANTAGE" />
-			<stat name="ac:armored:armor" value="17" />
-			<stat name="speed" value="-10" bonus="armor" requirements="![str:15]" />
+			<stat name="ac:armored:armor" value="18" />
+			<stat name="speed" value="-10" bonus="armor" requirements="![str:17]" />
 		</rules>
 	</element>
 	<element name="Plate" type="Armor" source="Player’s Handbook" id="ID_WOTC_ARMOR_HEAVY_PLATE">
@@ -227,15 +233,15 @@
 			<set name="weight" lb="65">65 lb.</set>
 			<set name="slot">body</set>
 			<set name="armor">Heavy</set>
-			<set name="strength">15</set>
+			<set name="strength">17</set>
 			<set name="stealth">Disadvantage</set>
-			<set name="armorClass">18</set>
+			<set name="armorClass">19</set>
 			<set name="proficiency">ID_PROFICIENCY_ARMOR_PROFICIENCY_PLATE</set>
 		</setters>
 		<rules>
 			<grant type="Grants" id="ID_INTERNAL_GRANTS_STEALTH_DISADVANTAGE" />
-			<stat name="ac:armored:armor" value="18" />
-			<stat name="speed" value="-10" bonus="armor" requirements="![str:15]" />
+			<stat name="ac:armored:armor" value="19" />
+			<stat name="speed" value="-10" bonus="armor" requirements="![str:17]" />
 		</rules>
 	</element>
 
