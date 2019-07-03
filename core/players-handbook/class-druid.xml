@@ -4,7 +4,7 @@
     <name>Druid</name>
     <description>The Druid class from the Player’s Handbook.</description>
     <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-    <update version="0.3.0">
+    <update version="0.3.2">
       <file name="class-druid.xml" url="https://raw.githubusercontent.com/KoenPater/aurora_dnd5/master/core/players-handbook/classes/class-druid.xml" />
     </update>
   </info>
@@ -59,6 +59,7 @@
       <div element="ID_WOTC_PHB_CLASS_FEATURE_DRUID_WILDSHAPE" />
       <div element="ID_WOTC_PHB_CLASS_FEATURE_DRUID_DRUID_CIRCLE" />
       <div element="ID_WOTC_PHB_CLASS_FEATURE_DRUID_ABILITYSCOREIMPROVEMENT_DRUID" />
+	  <div element="ID_WOTC_PHB_CLASS_FEATURE_DRUID_EXTRAATTACK" />
       <div element="ID_WOTC_PHB_CLASS_FEATURE_DRUID_TIMELESS_BODY" />
       <div element="ID_WOTC_PHB_CLASS_FEATURE_DRUID_BEAST_SPELLS" />
       <div element="ID_WOTC_PHB_CLASS_FEATURE_DRUID_ARCHDRUID" />
@@ -101,6 +102,7 @@
       <grant type="Class Feature" id="ID_WOTC_PHB_CLASS_FEATURE_DRUID_WILDSHAPE" level="2"/>
       <grant type="Class Feature" id="ID_WOTC_PHB_CLASS_FEATURE_DRUID_DRUID_CIRCLE" level="2"/>
       <grant type="Class Feature" id="ID_WOTC_PHB_CLASS_FEATURE_DRUID_ABILITYSCOREIMPROVEMENT_DRUID" level="4"/>
+	  <grant type="Class Feature" id="ID_WOTC_PHB_CLASS_FEATURE_DRUID_EXTRAATTACK" level="8"/>
       <grant type="Class Feature" id="ID_WOTC_PHB_CLASS_FEATURE_DRUID_TIMELESS_BODY" level="18"/>
       <grant type="Class Feature" id="ID_WOTC_PHB_CLASS_FEATURE_DRUID_BEAST_SPELLS" level="18"/>
       <grant type="Class Feature" id="ID_WOTC_PHB_CLASS_FEATURE_DRUID_ARCHDRUID" level="20"/>
@@ -241,6 +243,20 @@
       <select type="Class Feature" name="Improvement Option (Druid 19)" supports="Improvement Option,Druid,19" level="19" />
     </rules>
   </element>
+    <element name="Extra Attack" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_DRUID_EXTRAATTACK">
+    <description>
+      <p>Beginning at 8th level, you can attack twice, instead of once, whenever you take the Attack action on your turn. This does not apply to Attack actions made while in a shape assumed through Wild Shape.</p>
+	  <p class="indent">The number of attacks increases to three when you reach 14th level in this class.</p>
+    </description>
+    <sheet>
+      <description level="8">You can attack twice, instead of once, whenever you take the Attack action on your turn. Does not apply to Attack actions made while in a shape assumed through Wild Shape.</description>
+	  <description level="14">You can attack three times, instead of once, whenever you take the Attack action on your turn. Does not apply to Attack actions made while in a shape assumed through Wild Shape.</description>
+    </sheet>
+	<rules>
+		<stat name="extra attack:count" value="2" level="8" bonus="extra attack" />
+		<stat name="extra attack:count" value="3" level="14" bonus="extra attack" />
+	</rules>
+  </element>  
   <element name="Timeless Body" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_DRUID_TIMELESS_BODY">
     <description>
       <p>Starting at 18th level, the primal magic that you wield causes you to age more slowly. For every 10 years that pass, your body ages only 1 year.</p>
@@ -261,10 +277,10 @@
   </element>
   <element name="Archdruid" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_DRUID_ARCHDRUID">
     <description>
-      <p>At 20th level, transforming to a creature with a challenge rating of 1 or lower does not expend a use of your Wild Shape feature.</p>
+      <p>At 20th level, transforming to a creature with a challenge rating of 3 or lower does not expend a use of your Wild Shape feature.</p>
     </description>
     <sheet>
-      <description>At 20th level, transforming to a creature with a challenge rating of 1 or lower does not expend a use of your Wild Shape feature.</description>
+      <description>At 20th level, transforming to a creature with a challenge rating of 3 or lower does not expend a use of your Wild Shape feature.</description>
     </sheet>
     <rules />
   </element>
@@ -759,11 +775,10 @@
   </element>
   <element name="Primal Strike" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_CIRCLE_MOON_PRIMAL_STRIKE">
     <description>
-      <p>Starting at 6th level, your attacks in beast form count as magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage.</p>
-	  <p class="indent">Additionally, when you use your Combat Wild Shape feature to heal yourself, you may also add a bonus to your attack and damage rolls equal to the expended spell slot's level. This bonus lasts until the start of your next turn or until you leave your Wild Shape form, whichever happens first.</p>
+      <p>Starting at 6th level, your attacks in beast form score a critical hit on a roll of 18–20 and count as magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage.</p>
     </description>
     <sheet>
-      <description level="6">Your attacks in beast form count as magical. When you use Combat Wild Shape to heal yourself, add a bonus to attack and damage rolls equal to the expended spell slot's level until the start of your next turn or until you leave your Wild Shape form.</description>
+      <description level="6">Your attacks in beast form score a critical hit on a roll of 18–20 and count as magical.</description>
     </sheet>
     <rules />
   </element>
