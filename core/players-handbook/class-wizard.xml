@@ -4,7 +4,7 @@
     <name>Wizard</name>
     <description>The Wizard class from the Player’s Handbook.</description>
     <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-    <update version="0.2.9">
+    <update version="0.3.1">
       <file name="class-wizard.xml" url="https://raw.githubusercontent.com/KoenPater/aurora_dnd5/master/core/players-handbook/classes/class-wizard.xml" />
     </update>
   </info>
@@ -246,6 +246,94 @@
   </element>
 
 
+<element name="Bladesinging" type="Archetype" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_BLADESINGING">
+	<supports>Arcane Tradition</supports>
+	<description>
+		<p>Bladesingers are wizards who master a school of arcane sword fighting that finds its origin in elven tradition. In combat, a bladesinger uses a series of intricate, elegant maneuvers that fend off harm and allow the bladesinger to channel magic into devastating attacks and a cunning defense.</p>
+		<div element="ID_WOTC_SCAG_ARCHETYPE_FEATURE_BLADESINGING_TRAINING_IN_WAR_AND_SONG" />
+		<div element="ID_WOTC_SCAG_ARCHETYPE_FEATURE_BLADESINGING_BLADESONG" />
+		<div element="ID_WOTC_SCAG_ARCHETYPE_FEATURE_BLADESINGING_EXTRA_ATTACK" />
+		<div element="ID_WOTC_SCAG_ARCHETYPE_FEATURE_BLADESINGING_SONG_OF_DEFENSE" />
+		<div element="ID_WOTC_SCAG_ARCHETYPE_FEATURE_BLADESINGING_SONG_OF_VICTORY" />
+	</description>
+	<sheet>
+		<description>Bladesingers are wizards who master a school of arcane sword fighting.</description>
+	</sheet>
+	<rules>
+		<grant type="Archetype Feature" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_BLADESINGING_TRAINING_IN_WAR_AND_SONG" level="2" />
+		<grant type="Archetype Feature" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_BLADESINGING_BLADESONG" level="2" />
+		<grant type="Archetype Feature" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_BLADESINGING_EXTRA_ATTACK" level="6" />
+		<grant type="Archetype Feature" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_BLADESINGING_SONG_OF_DEFENSE" level="10" />
+		<grant type="Archetype Feature" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_BLADESINGING_SONG_OF_VICTORY" level="14" />
+	</rules>
+</element>
+<element name="Training in War and Song" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_BLADESINGING_TRAINING_IN_WAR_AND_SONG">
+	<description>
+		<p>When you adopt this tradition at 2nd level, you gain proficiency with light armor, and you gain proficiency with one type of one-handed melee weapon of your choice.</p>
+		<p class="indent">You also gain proficiency in the Performance skill if you don’t already have it.</p>
+	</description>
+	<sheet display="false">
+		<description>You gain proficiency with light armor, and you gain proficiency with one type of one-handed melee weapon of your choice. You also gain proficiency in the Performance skill if you don’t already have it.</description>
+	</sheet>
+	<rules>
+		<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" />
+		<select type="Proficiency" name="Training in War and Song" supports="(ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_MELEE||ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE),!ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED" />
+		<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERFORMANCE" />
+	</rules>
+</element>
+<element name="Bladesong" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_BLADESINGING_BLADESONG">
+	<description>
+		<p>Starting at 2nd level, you can invoke a secret elven magic called the Bladesong, provided that you aren’t wearing medium or heavy armor or using a shield. It graces you with supernatural speed, agility, and focus.</p>
+		<p class="indent">You can use a bonus action to start the Bladesong, which lasts for 1 minute. It ends early if you are incapacitated, if you don medium or heavy armor or a shield, or if you use two hands to make an attack with a weapon. You can also dismiss the Bladesong at any time you choose (no action required).</p>
+		<p class="indent">While your Bladesong is active, you gain the following benefits:</p>
+		<ul>
+			<li>You gain a bonus to your AC equal to your Intelligence modifier (minimum of + 1).</li>
+			<li>Your walking speed increases by 10 feet.</li>
+			<li>You have advantage on Dexterity (Acrobatics) checks .</li>
+			<li>You gain a bonus to any Constitution saving throw you make to maintain your concentration on a spell. The bonus equals your Intelligence modifier (minimum of +l).</li>
+		</ul>
+		<p class="indent">You can use this feature twice. You regain all expended uses of it when you finish a short or long rest.</p>
+	</description>
+	<sheet usage="2/Short Rest">
+		<description>You can use a bonus action to start the Bladesong, which lasts for 1 minute. +{{bladesong:intelligence}} AC, +10 speed, advantage on Acrobatics checks, +{{bladesong:intelligence}} to concentration checks.</description>
+	</sheet>
+	<rules>
+		<stat name="bladesong:intelligence" value="1" bonus="bladesong" />
+		<stat name="bladesong:intelligence" value="intelligence:modifier" bonus="bladesong" />
+	</rules>
+</element>
+<element name="Extra Attack" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_BLADESINGING_EXTRA_ATTACK">
+	<description>
+		<p>Starting at 6th level, you can attack twice, instead of once, whenever you take the Attack action on your turn.</p>
+	</description>
+	<sheet>
+		<description>You can attack twice, instead of once, whenever you take the Attack action on your turn.</description>
+	</sheet>
+	<rules>
+		<stat name="extra attack:count" value="2" level="6" bonus="extra attack" />
+	</rules>
+</element>
+<element name="Song of Defense" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_BLADESINGING_SONG_OF_DEFENSE">
+	<description>
+		<p>Beginning at 10th level, you can direct your magic to absorb damage while your Bladesong is active. When you take damage, you can use your reaction to expend one spell slot and reduce that damage to you by an amount equal to five times the spell slot’s level.</p>
+	</description>
+	<sheet>
+		<description>When you take damage, you can use your reaction to expend one spell slot and reduce that damage to you by an amount equal to five times the spell slot’s level.</description>
+	</sheet>
+	<rules />
+</element>
+<element name="Song of Victory" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_BLADESINGING_SONG_OF_VICTORY">
+	<description>
+		<p>Starting at 14th level, you add your Intelligence modifier (minimum of +1) to the damage of your melee weapon attacks while your Bladesong is active.</p>
+	</description>
+	<sheet>
+		<description>You add +{{bladesong:intelligence}} to the damage of your melee weapon attacks while your Bladesong is active.</description>
+	</sheet>
+	<rules>
+		<!-- +bladesong:intelligence on melee damage, condition bladesong active -->
+	</rules>
+</element>  
+  
 
 
 <element name="School of Abjuration" type="Archetype" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_WIZARD_SCHOOL_OF_ABJURATION">
@@ -300,7 +388,7 @@
     <p>Starting at 6th level, when a creature that you can see within 30 feet of you takes damage, you can use your reaction to cause your Arcane Ward to absorb that damage. If this damage reduces the ward to 0 hit points, the warded creature takes any remaining damage.</p>
   </description>
   <sheet>
-    <description>Ehen a creature that you can see within 30 feet of you takes damage, you can use your reaction to cause your Arcane Ward to absorb that damage. If this damage reduces the ward to 0 hit points, the warded creature takes any remaining damage.</description>
+    <description>When a creature that you can see within 30 feet of you takes damage, you can use your reaction to cause your Arcane Ward to absorb that damage. If this damage reduces the ward to 0 hit points, the warded creature takes any remaining damage.</description>
   </sheet>
 </element>
 <element name="Improved Abjuration" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ABJURATION_IMPROVED_ABJURATION">
@@ -694,10 +782,10 @@
 </element>
 <element name="Grim Harvest" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_NECROMANCY_GRIM_HARVEST">
   <description>
-    <p>At 2nd level, you gain the ability to reap life energy from creatures you kill with your spells. Once per turn when you kill one or more creatures with a spell of 1st level or higher, you regain hit points equal to twice the spell’s level, or three times its level if the spell belongs to the School of Necromancy. You don’t gain this benefit for killing constructs or undead.</p>
+    <p>At 2nd level, you gain the ability to reap life energy from creatures you kill with your spells. Once per turn when you kill one or more creatures with a spell of 1st level or higher, you regain hit points equal to three times the spell’s level, or five times its level if the spell belongs to the School of Necromancy. You don’t gain this benefit for killing constructs or undead.</p>
   </description>
   <sheet>
-    <description>Once per turn when you kill one or more creatures with a spell of 1st level or higher, you regain hit points equal to twice the spell’s level, or three times its level if the spell belongs to the School of Necromancy. You don’t gain this benefit for killing constructs or undead.</description>
+    <description>Once per turn when you kill one or more creatures with a spell of 1st level or higher, you regain hit points equal to three times the spell’s level, or five times its level if the spell belongs to the School of Necromancy. You don’t gain this benefit for killing constructs or undead.</description>
   </sheet>
 </element>
 <element name="Undead Thralls" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_NECROMANCY_UNDEAD_THRALLS">
@@ -820,4 +908,82 @@
   </sheet>
 </element>
 
+<element name="War Magic" type="Archetype" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_WIZARD_ARCHETYPE_WAR_MAGIC">
+	<supports>Arcane Tradition</supports>
+	<description>
+		<p>A variety of arcane colleges specialize in training wizards for war. The tradition of War Magic blends principles of evocation and abjuration, rather than specializing in either of those schools. It teaches techniques that empower a caster’s spells, while also providing methods for wizards to bolster their own defenses. Followers of this tradition are known as war mages. They see their magic as both a weapon and armor, a resource superior to any piece of steel. War mages act fast in battle, using their spells to seize tactical control of a situation. Their spells strike hard, while their defensive skills foil their opponents’ attempts to counterattack. War mages are also adept at turning other spellcasters’ magical energy against them. In great battles, a war mage often works with evokers, abjurers, and other types of wizards. Evokers, in particular, sometimes tease war mages for splitting their attention between offense and defense. A war mage’s typical response: “What good is being able to throw a mighty fireball if I die before I can cast it?”</p>
+		<div element="ID_WOTC_XGTE_ARCHETYPE_FEATURE_WAR_MAGIC_ARCANE_DEFLECTION" />
+		<div element="ID_WOTC_XGTE_ARCHETYPE_FEATURE_WAR_MAGIC_TACTICAL_WIT" />
+		<div element="ID_WOTC_XGTE_ARCHETYPE_FEATURE_WAR_MAGIC_POWER_SURGE" />
+		<div element="ID_WOTC_XGTE_ARCHETYPE_FEATURE_WAR_MAGIC_DURABLE_MAGIC" />
+		<div element="ID_WOTC_XGTE_ARCHETYPE_FEATURE_WAR_MAGIC_DEFLECTING_SHROUD" />
+	</description>
+	<sheet>
+		<description>War mages act fast in battle, using their spells to seize tactical control of a situation.</description>
+	</sheet>
+	<rules>
+		<grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_WAR_MAGIC_ARCANE_DEFLECTION" level="2"/>
+		<grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_WAR_MAGIC_TACTICAL_WIT" level="2"/>
+		<grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_WAR_MAGIC_POWER_SURGE" level="6"/>
+		<grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_WAR_MAGIC_DURABLE_MAGIC" level="10"/>
+		<grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_WAR_MAGIC_DEFLECTING_SHROUD" level="14"/>
+	</rules>
+</element>
+<element name="Arcane Deflection" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_WAR_MAGIC_ARCANE_DEFLECTION">
+	<description>
+		<p>At 2nd level, you have learned to weave your magic to fortify yourself against harm. When you are hit by an attack or you fail a saving throw, you can use your reaction to gain a +2 bonus to your AC against that attack or a +2 bonus to that saving throw.</p>
+		<p class="indent">When you use this feature, you can’t cast spells other than cantrips until the end of your next turn.</p>
+	</description>
+	<sheet>
+		<description>When you are hit with an attack or you fail a saving throw, you can use your reaction to gain +2 bonus to your AC or +2 bonus to that saving throw. If you use this feature, you can only cast cantrips in your following turn.</description>
+	</sheet>
+	<rules />
+</element>
+<element name="Tactical Wit" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_WAR_MAGIC_TACTICAL_WIT">
+	<description>
+		<p>Starting at 2nd level, your keen ability to assess tactical situations allows you to act quickly in battle. You can give yourself a bonus to your initiative rolls equal to your Intelligence modifier.</p>
+	</description>
+	<sheet>
+		<description>You gain +{{intelligence:modifier}} bonus to your initiative.</description>
+	</sheet>
+	<rules>
+		<stat name="initiative" value="intelligence:modifier" />
+	</rules>
+</element>
+<element name="Power Surge" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_WAR_MAGIC_POWER_SURGE">
+	<description>
+		<p>Starting at 6th level, you can store magical energy within yourself to later empower your damaging spells. In its stored form, this energy is called a power surge.</p>
+		<p class="indent">You can store a maximum number of power surges equal to your Intelligence modifier (minimum of one). Whenever you finish a long rest, your number of power surges resets to one. Whenever you successfully end a spell with Dispel Magic or Counterspell, you gain one power surge, as you steal magic from the spell you foiled. If you end a short rest with no power surges, you gain one power surge.</p>
+		<p class="indent">Once per turn when you deal damage to a creature or object with a wizard spell, you can spend one power surge to deal extra force damage to that target. The extra damage equals half your wizard level.</p>
+	</description>
+	<sheet>
+		<description>You start of with 1 power surge and you can store up to {{power surge:int}} power surges. Whenever you end a spell successfully with Dispel Magic or Counterspell, you gain 1 power surge. After a long rest, your power surge resets to 1. If you finish a short rest with no power surges, you gain 1 power surge.
+		<p class="indent">Once per turn when you deal damage with a spell, you can spend 1 power surge to deal {{power surge:damage}} extra force damage to that target.</p></description>
+	</sheet>
+	<rules>
+		<stat name="power surge:int" value="1" bonus="power surge"/>
+		<stat name="power surge:int" value="intelligence:modifier" bonus="power surge"/>
+		<stat name="power surge:damage" value="level:wizard:half" />
+	</rules>
+</element>
+<element name="Durable Magic" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_WAR_MAGIC_DURABLE_MAGIC">
+	<description>
+		<p>Beginning at 10th level, the magic you channel helps ward off harm. While you maintain concentration on a spell, you have a +2 bonus to AC and all saving throws.</p>
+	</description>
+	<sheet>
+		<description>While concentrating on a spell, you gain +2 bonus to your AC and all saving throws.</description>
+	</sheet>
+	<rules />
+</element>
+<element name="Deflecting Shroud" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_WAR_MAGIC_DEFLECTING_SHROUD">
+	<description>
+		<p>At 14th level, your Arcane Deflection becomes infused with deadly magic. When you use your Arcane Deflection feature, you can cause magical energy to arc from you. Up to three creatures of your choice that you can see within 15 feet of you each take force damage equal to your wizard level.</p>
+	</description>
+	<sheet>
+		<description>When you use Arcane Deflection, three creatures of your choice which you can see within 15 feet take {{deflecting shroud:damage}} force damage.</description>
+	</sheet>
+	<rules>
+		<stat name="deflecting shroud:damage" value="level:wizard" />
+	</rules>
+</element>
 </elements>
