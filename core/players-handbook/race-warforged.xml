@@ -4,7 +4,7 @@
 		<name>Warforged (Juggernaut)</name>
 		<description></description>
 		<author url="http://dnd.wizards.com">Wizards of the Coast</author>
-		<update version="0.2.2">
+		<update version="0.2.3">
 			<file name="race-warforged.xml" url="https://raw.githubusercontent.com/KoenPater/aurora_dnd5/master/core/players-handbook/race-warforged.xml" />
 		</update>
 	</info>
@@ -31,7 +31,7 @@
       <thead><tr><td>Mode</td><td>Prerequisite</td><td>Armor Class</td></tr></thead>
       <tr><td>Darkwood core (unarmored)</td><td>None</td><td>11 + your Dexterity modifier (add proficiency bonus if proficient with light armor).</td></tr>
       <tr><td>Composite plating (armored)</td><td>Medium armor proficiency</td><td>13 + your Dexterity modifier (maximum 2) + proficiency bonus.</td></tr>
-      <tr><td>Heavy plating (armored)</td><td>None</td><td>16 + proficiency bonus; disadvantage on Dexterity (Stealth) checks.</td></tr>
+      <tr><td>Heavy plating (armored)</td><td>Heavy armor proficiency</td><td>17 + proficiency bonus; disadvantage on Dexterity (Stealth) checks.</td></tr>
 	  </table>
 	  <span class="feature">Languages.</span>You can speak, read, and write Common and one other language of your choice.<br/>
       <span class="feature">Subrace.</span>As a warforged, your body was designed for a specific purpose. Choose one of these subraces: envoy, juggernaut, or skirmisher.<br/>
@@ -79,10 +79,10 @@
   </element>
   <element name="Sentry's Rest" type="Racial Trait" source="Unearthed Arcana: Eberron" id="ID_WOTC_UA_RACIAL_TRAIT_SENTRYS_REST">
     <description>
-    <p>When you take a long rest, you must spend at least six hours of it in an inactive, motionless state, rather than sleeping. In this state, you appear inert, but it doesn’t render you unconscious, and you can see and hear as normal.</p>
+    <p>Once per day you must spend at least six hours in an inactive, motionless state, rather than sleeping. In this state, you appear inert, but it doesn’t render you unconscious, and you can see and hear as normal.</p>
     </description>
     <sheet>
-    <description>When you take a long rest, you must spend at least six hours of it in an inactive, motionless state, rather than sleeping.</description>
+    <description>Once per day you must spend at least six hours of it in an inactive, motionless state, rather than sleeping.</description>
     </sheet>
     <rules />
   </element> 
@@ -167,7 +167,7 @@
 	</setters>
     <rules>
 		<grant type="Grants" id="ID_INTERNAL_GRANTS_STEALTH_DISADVANTAGE" />
-		<stat name="ac:unarmored defense warforged:base" value="16" />
+		<stat name="ac:unarmored defense warforged:base" value="17" />
 		<stat name="ac:unarmored defense warforged:proficiency" value="proficiency" />
 
 		<stat name="ac:unarmored defense warforged" value="ac:unarmored defense warforged:base" />
