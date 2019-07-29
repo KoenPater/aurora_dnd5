@@ -4,14 +4,14 @@
 		<name>Armor</name>
 		<description></description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-		<update version="0.0.3">
+		<update version="0.0.5">
 			<file name="items-armor.xml" url="https://raw.githubusercontent.com/KoenPater/aurora_dnd5/master/core/dungeon-masters-guide/items/items-armor.xml" />
 		</update>
 	</info>
 
-	<element name="Armor, +1" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_ARMOR_1">
+	<element name="Masterwork Armor" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_ARMOR_1">
 		<description>
-			<p>You have a bonus to AC while wearing this armor. The bonus is determined by its rarity.</p>
+			<p>Masterwork armor is not magical, but rather of exceptional crafting quality. It can cost up to 10 times what you would pay for a normal suit of armor of its type. The AC of Masterwork armor is 1 higher than normal armor of the same type.</p>
 		</description>
 		<setters>
 			<set name="keywords" />
@@ -20,58 +20,15 @@
 			<set name="weight" lb="0">0 lb.</set>
 			<set name="slot">body</set>
 			<set name="type" addition="light, medium, or heavy">Armor</set>
-			<set name="rarity">Rare</set>
+			<set name="rarity">Uncommon</set>
 			<set name="enhancement">1</set>
 			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT|ID_INTERNAL_ARMOR_GROUP_MEDIUM|ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
-			<set name="name-format">{{parent}} +{{enhancement}}</set>
+			<set name="name-format">{{parent}}, Masterwork</set>
 		</setters>
 		<rules>
 			<stat name="ac:armored:enhancement" value="1" bonus="enhancement" />
 		</rules>
 	</element>
-	<element name="Armor, +2" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_ARMOR_2">
-		<description>
-			<p>You have a bonus to AC while wearing this armor. The bonus is determined by its rarity.</p>
-		</description>
-		<setters>
-			<set name="keywords" />
-			<set name="category">Magic Armor</set>
-			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="0">0 lb.</set>
-			<set name="slot">body</set>
-			<set name="type" addition="light, medium, or heavy">Armor</set>
-			<set name="rarity">Very Rare</set>
-			<set name="enhancement">2</set>
-			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT|ID_INTERNAL_ARMOR_GROUP_MEDIUM|ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
-			<set name="name-format">{{parent}} +{{enhancement}}</set>
-		</setters>
-		<rules>
-			<stat name="ac:armored:enhancement" value="2" bonus="enhancement" />
-		</rules>
-	</element>
-	<element name="Armor, +3" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_ARMOR_3">
-		<description>
-			<p>You have a bonus to AC while wearing this armor. The bonus is determined by its rarity.</p>
-		</description>
-		<setters>
-			<set name="keywords" />
-			<set name="category">Magic Armor</set>
-			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="0">0 lb.</set>
-			<set name="slot">body</set>
-			<set name="type" addition="light, medium, or heavy">Armor</set>
-			<set name="rarity">Legendary</set>
-			<set name="strength" />
-			<set name="stealth" />
-			<set name="supports" />
-			<set name="enhancement">3</set>
-			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT|ID_INTERNAL_ARMOR_GROUP_MEDIUM|ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
-			<set name="name-format">{{parent}} +{{enhancement}}</set>
-		</setters>
-		<rules>
-			<stat name="ac:armored:enhancement" value="3" bonus="enhancement" />
-		</rules>
-	</element>	
 	<element name="Adamantine Armor" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_ADAMANTINE_ARMOR">
 		<supports>Armor</supports>
 		<description>
@@ -101,7 +58,7 @@
 			<set name="weight" lb="0">0 lb.</set>
 			<set name="slot">body</set>
 			<set name="type" addition="light, medium, or heavy">Armor</set>
-			<set name="rarity">Uncommon</set>
+			<set name="rarity">Rare</set>
 			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT||ID_INTERNAL_ARMOR_GROUP_MEDIUM||ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
 			<set name="name-format">Mariner’s {{parent}}</set>
 		</setters>
@@ -836,9 +793,9 @@
 	</element>
 
 	<!-- shields -->
-	<element name="Shield, +1" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_SHIELD_1">
+	<element name="Masterwork Armor" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_SHIELD_1">
 		<description>
-			<p>While holding this shield, you have a bonus to AC determined by the shield's rarity. This bonus is in addition to the shield's normal bonus to AC.</p>
+			<p>Masterwork shields are not magical, but rather of exceptional crafting quality. They can cost up to 10 times what you would pay for a normal shield of its type. Masterwork shields provide an additional +1 bonus to AC compared to normal shields of the same type.</p>
 		</description>
 		<setters>
 			<set name="keywords">shield</set>
@@ -849,48 +806,10 @@
 			<set name="rarity">Uncommon</set>
 			<set name="enhancement">1</set>
 			<set name="armor">ID_INTERNAL_ARMOR_GROUP_SHIELD</set>
-			<set name="name-format">{{parent}} +{{enhancement}}</set>
+			<set name="name-format">{{parent}}, Masterwork</set>
 		</setters>
 		<rules>
 			<stat name="ac:armored:enhancement" value="1" bonus="enhancement:shield" />
-		</rules>
-	</element>
-	<element name="Shield, +2" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_SHIELD_2">
-		<description>
-			<p>While holding this shield, you have a bonus to AC determined by the shield's rarity. This bonus is in addition to the shield's normal bonus to AC.</p>
-		</description>
-		<setters>
-			<set name="keywords">shield</set>
-			<set name="category">Magic Armor</set>
-			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="0">0 lb.</set>
-			<set name="type" addition="shield">Armor</set>
-			<set name="rarity">Rare</set>
-			<set name="enhancement">2</set>
-			<set name="armor">ID_INTERNAL_ARMOR_GROUP_SHIELD</set>
-			<set name="name-format">{{parent}} +{{enhancement}}</set>
-		</setters>
-		<rules>
-			<stat name="ac:armored:enhancement" value="2" bonus="enhancement:shield" />
-		</rules>
-	</element>
-	<element name="Shield, +3" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_SHIELD_3">
-		<description>
-			<p>While holding this shield, you have a bonus to AC determined by the shield's rarity. This bonus is in addition to the shield's normal bonus to AC.</p>
-		</description>
-		<setters>
-			<set name="keywords">shield</set>
-			<set name="category">Magic Armor</set>
-			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="0">0 lb.</set>
-			<set name="type" addition="shield">Armor</set>
-			<set name="rarity">Very Rare</set>
-			<set name="enhancement">3</set>
-			<set name="armor">ID_INTERNAL_ARMOR_GROUP_SHIELD</set>
-			<set name="name-format">{{parent}} +{{enhancement}}</set>
-		</setters>
-		<rules>
-			<stat name="ac:armored:enhancement" value="3" bonus="enhancement:shield" />
 		</rules>
 	</element>
 	
@@ -904,7 +823,7 @@
 			<set name="cost" currency="gp">0</set>
 			<set name="weight" lb="0">0 lb.</set>
 			<set name="type" addition="shield">Armor</set>
-			<set name="rarity">Uncommon</set>
+			<set name="rarity">Rare</set>
 			<set name="armor">ID_INTERNAL_ARMOR_GROUP_SHIELD</set>
 		</setters>
 		<rules>
