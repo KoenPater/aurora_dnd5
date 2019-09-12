@@ -4,7 +4,7 @@
 		<name>Feats</name>
 		<description>Feats from the Player’s Handbook.</description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-		<update version="0.1.1">
+		<update version="0.1.3">
 			<file name="feats.xml" url="https://raw.githubusercontent.com/KoenPater/aurora_dnd5/master/core/players-handbook/feats.xml" />
 		</update>
 	</info>
@@ -31,13 +31,11 @@
 			<p>Always on the lookout for danger, you gain the folloing benefits:</p>
 			<ul>
 				<li>You gain a +5 bonus to initiative.</li>
-				<li>You can’t be surprised while you are conscious.</li>
 				<li>Other creatures don’t gain advantage on attack rolls against you as a result of being hidden from you.</li>
 			</ul>
 		</description>
 		<sheet>
-			<description>You can’t be surprised while you are conscious.
-			Other creatures don’t gain advantage on attack rolls against you as a result of being hidden from you.</description>
+			<description>Other creatures don’t gain advantage on attack rolls against you as a result of being hidden from you.</description>
 		</sheet>
 		<rules>
 			<stat name="initiative" value="5" />
@@ -64,12 +62,11 @@
 	</element>
 	<element name="Charger" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_CHARGER">
 		<description>
-			<p>When you use your action to Dash, you can use a bonus action to make one melee weapon attack or to shove a creature.</p>
-			<p class="indent">If you move at least 10 feet in a straight line immediately before taking this bonus action, you either gain a +5 bonus to the attack’s damage roll (if you chose to make a melee attack and hit) or push the target up to 10 feet away from you (if you chose to shove and you succeed).</p>
+			<p>You add the momentum of your charge to the power of your attack.</p>
+			<p>When you move at least 15 feet in a straight line to engage a target, the first melee weapon attack made against that target gains a +5 bonus to damage. If you choose to use the attack to shove the target, you will instead shove it an additional 10 feet.</p>
 		</description>
 		<sheet>
-			<description>When you use your action to Dash, you can use a bonus action to make one melee weapon attack or to shove a creature.
-			If you move at least 10 feet in a straight line immediately before taking this bonus action, you either gain a +5 bonus to the attack’s damage roll (if you chose to make a melee attack and hit) or push the target up to 10 feet away from you (if you chose to shove and you succeed).</description>
+			<description>When you move at least 15 feet in a straight line to engage a target, the first melee weapon attack made against that target gains a +5 bonus to damage. If you choose to use the attack to shove the target, you will instead shove it an additional 10 feet.</description>
 		</sheet>
 	</element>
 	<element name="Crossbow Expert" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_CROSSBOWEXPERT">
@@ -77,25 +74,22 @@
 			<p>Thanks to extensive practice with the crossbow, you gain the following benefits:</p>
 			<ul>
 				<li>You ignore the loading quality of crossbows with which you are proficient.</li>
-				<li>Being within 5 feet of a hostile creature doesn’t impose disadvantage on your ranged attack rolls.</li>
+				<li>You can roll one additional weapon damage die when determining the extra damage for a critical hit with a crossbow.</li>
 				<li>When you use the Attack action and attack with a one-handed weapon, you can use a bonus action to attack with a loaded hand crossbow you are holding.</li>
 			</ul>			
 		</description>
 		<sheet>
 			<description>You ignore the loading quality of crossbows with which you are proficient.
-			Being within 5 feet of a hostile creature doesn’t impose disadvantage on your ranged attack rolls.
+			You roll one additional weapon damage die when determining the extra damage for a critical hit with a crossbow.
 			When you use the Attack action and attack with a one-handed weapon, you can use a bonus action to attack with a loaded hand crossbow you are holding.</description>
 		</sheet>
 	</element>
 	<element name="Defensive Duelist" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_DEFENSIVE_DUELIST">
-		<prerequisite>Dexterity 13 or higher</prerequisite>
-		<requirements>[dex:13]</requirements>
 		<description>
-			<p><i>Prerequisite: Dexterity 13 or higher</i></p>
-			<p>When you are wielding a finesse weapon with which you are proficient and another creature hits you with a melee attack, you can use your reaction to add your proficiency bonus to your AC for that attack, potentially causing the attack to miss you.</p>
+			<p>When you are wielding a melee weapon with which you are proficient and another creature hits you with a melee attack, you can use your reaction to add your proficiency bonus to your AC for that attack, potentially causing the attack to miss you.</p>
 		</description>
 		<sheet>
-			<description>When you are wielding a finesse weapon with which you are proficient and another creature hits you with a melee attack, you can use your reaction to add {{defensive duelist:ac}} to your AC for that attack, potentially causing the attack to miss you.</description>
+			<description>When you are wielding a melee weapon with which you are proficient and another creature hits you with a melee attack, you can use your reaction to add {{defensive duelist:ac}} to your AC for that attack, potentially causing the attack to miss you.</description>
 		</sheet>
 		<rules>
 			<stat name="defensive duelist:ac" value="proficiency" />
@@ -105,24 +99,20 @@
 		<description>
 			<p>You master fighting with two weapons, gaining the following benefits:</p>
 			<ul>
-				<li>You gain a +1 bonus to AC while you are wielding a separate melee weapon in each hand.</li>
 				<li>You can use two-weapon fighting even when the onehanded melee weapons you are wielding aren’t light.</li>
 				<li>You can draw or stow two one-handed weapons when you would normally be able to draw or stow only one.</li>
 			</ul>
 		</description>
 		<sheet>
-			<description>+1 bonus to AC while you are wielding a separate melee weapon in each hand.
-			You can use two-weapon fighting even when the onehanded melee weapons you are wielding aren’t light.
+			<description>You can use two-weapon fighting even when the onehanded melee weapons you are wielding aren’t light.
 			You can draw or stow two one-handed weapons when you would normally be able to draw or stow only one.</description>
 		</sheet>
-		<rules>
-			<stat name="ac:misc" value="1" equipped="[primary:any],[secondary:any],![primary:versatile]" />
-		</rules>
 	</element>
 	<element name="Dungeon Delver" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_DUNGEON_DELVER">
 		<description>
 			<p>Alert to the hidden traps and secret doors found in many dungeons, you gain the following benefits:</p>
 			<ul>
+				<li>Increase your Intelligence or Wisdom score by 1, to a maximum of 20.</li>
 				<li>You have advantage on Wisdom (Perception) and Intelligence (Investigation) checks made to detect the presence of secret doors.</li>
 				<li>You have advantage on saving throws made to avoid or resist traps.</li>
 				<li>You have resistance to the damage dealt by traps.</li>
@@ -140,34 +130,34 @@
 			You have resistance to the damage dealt by traps.
 			Traveling at a fast pace doesn’t impose the normal −5 penalty on your passive Perception score.</description>			
 		</sheet>
-		<!-- todo: traps resistance condition -->
+		<rules>
+			<select type="Ability Score Improvement" name="Dungeon Delver" supports="ID_PHB_FEAT_ASI_INTELLIGENCE|ID_PHB_FEAT_ASI_WISDOM" />
+		</rules>
 	</element>
 	<element name="Durable" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_DURABLE">
 		<description>
 			<p>Hardy and resilient, you gain the following benefits:</p>
 			<ul>
 				<li>Increase your Constitution score by 1, to a maximum of 20.</li>
-				<li>When you roll a Hit Die to regain hit points, the minimum number of hit points you regain from the roll equals twice your Constitution modifier (minimum of 2).</li>
+				<li>When you roll a Hit Die to regain hit points, you double the additional hit points gained from your Constitution modifier.</li>
 			</ul>
 		</description>
 		<sheet>
-			<description>When you roll a Hit Die to regain hit points, the minimum number of hit points you regain from the roll equals {{durable:hd:bonus}}.</description>
+			<description>When you roll a Hit Die to regain hit points, you double the additional hit points gained from your Constitution modifier.</description>
 		</sheet>
 		<rules>
 			<stat name="constitution" value="1" />
-			<stat name="durable:constitution modifier" value="constitution:modifier" />
-			<stat name="durable:constitution modifier" value="constitution:modifier" />
-			<stat name="durable:hd:bonus" value="2" bonus="feat:durable" />
-			<stat name="durable:hd:bonus" value="durable:constitution modifier" bonus="feat:durable" />
 		</rules>
 	</element>
 	<element name="Elemental Adept" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_ELEMENTAL_ADEPT">
 		<prerequisite>The ability to cast at least one spell</prerequisite>
 		<requirements>[type:spell]</requirements>
 		<description>
-			<p><i>Prerequisite: The ability to cast at least one spell</i></p>
+			<p><i>Prerequisite: The ability to cast at least one spell of 1st level or higher</i></p>
 			<p>When you gain this feat, choose one of the following damage types: acid, cold, fire, lightning, or thunder.</p>
-			<p class="indent">Spells you cast ignore resistance to damage of the chosen type. In addition, when you roll damage for a spell you cast that deals damage of that type, you can treat any 1 on a damage die as a 2.</p>
+			<p class="indent">When you roll damage for a spell you cast of 1st level or higher that deals damage of the chosen type, you may add the spell's level to the total damage rolled.</p>
+			<p class="indent">If you chose the cold damage type, you also increase your Constitution score by 1, to a maximum of 20.</p>
+			<p class="indent">If you chose the acid, lightning, or thunder damage type, you also increase your Dexterity, Constitution or Wisdom score by 1, to a maximum of 20.</p>
 			<p class="indent">You can select this feat multiple times. Each time you do so, you must choose a different damage type.</p>
 		</description>
 		<sheet />
@@ -181,57 +171,67 @@
 	<element name="Acid" type="Feat Feature" source="Player’s Handbook" id="ID_PHB_FEAT_ELEMENTAL_ADEPT_ACID">
 		<supports>Elemental Adept</supports>
 		<description>
-			<p>Spells you cast ignore acid resistance. In addition, when you roll damage for a spell you cast that deals acid damage, you can treat any 1 on a damage die as a 2.</p>
+			<p>When you roll damage for a spell that deals acid damage, you may add the spell's level to the total damage rolled.</p>
 		</description>
 		<sheet>
-			<description>Spells you cast ignore acid resistance. Treat any 1 on a damage die as a 2 with acid spells.</description>
+			<description>Acid spells add the spell's level to the damage rolled.</description>
 		</sheet>
+		<rules>
+			<select type="Ability Score Improvement" name="Elemental Adept (Acid)" supports="ID_PHB_FEAT_ASI_DEXTERITY|ID_PHB_FEAT_ASI_CONSTITUTION|ID_PHB_FEAT_ASI_WISDOM" />
+		</rules>
 	</element>
 	<element name="Cold" type="Feat Feature" source="Player’s Handbook" id="ID_PHB_FEAT_ELEMENTAL_ADEPT_COLD">
 		<supports>Elemental Adept</supports>
 		<description>
-			<p>Spells you cast ignore cold resistance. In addition, when you roll damage for a spell you cast that deals cold damage, you can treat any 1 on a damage die as a 2.</p>
+			<p>When you roll damage for a spell that deals cold damage, you may add the spell's level to the total damage rolled.</p>
 		</description>
 		<sheet>
-			<description>Spells you cast ignore cold resistance. Treat any 1 on a damage die as a 2 with cold spells.</description>
+			<description>Cold spells add the spell's level to the damage rolled.</description>
 		</sheet>
+		<rules>
+			<stat name="constitution" value="1" />
+		</rules>
 	</element>
 	<element name="Fire" type="Feat Feature" source="Player’s Handbook" id="ID_PHB_FEAT_ELEMENTAL_ADEPT_FIRE">
 		<supports>Elemental Adept</supports>
 		<description>
-			<p>Spells you cast ignore fire resistance. In addition, when you roll damage for a spell you cast that deals fire damage, you can treat any 1 on a damage die as a 2.</p>
+			<p>When you roll damage for a spell that deals fire damage, you may add the spell's level to the total damage rolled.</p>
 		</description>
 		<sheet>
-			<description>Spells you cast ignore fire resistance. Treat any 1 on a damage die as a 2 with fire spells.</description>
+			<description>Fire spells add the spell's level to the damage rolled.</description>
 		</sheet>
 	</element>
 	<element name="Lightning" type="Feat Feature" source="Player’s Handbook" id="ID_PHB_FEAT_ELEMENTAL_ADEPT_LIGHTNING">
 		<supports>Elemental Adept</supports>
 		<description>
-			<p>Spells you cast ignore lightning resistance. In addition, when you roll damage for a spell you cast that deals lightning damage, you can treat any 1 on a damage die as a 2.</p>
+			<p>When you roll damage for a spell that deals lightning damage, you may add the spell's level to the total damage rolled.</p>
 		</description>
 		<sheet>
-			<description>Spells you cast ignore lightning resistance. Treat any 1 on a damage die as a 2 with lightning spells.</description>
+			<description>Lightning spells add the spell's level to the damage rolled.</description>
 		</sheet>
+		<rules>
+			<select type="Ability Score Improvement" name="Elemental Adept (Lightning)" supports="ID_PHB_FEAT_ASI_DEXTERITY|ID_PHB_FEAT_ASI_CONSTITUTION|ID_PHB_FEAT_ASI_WISDOM" />
+		</rules>
 	</element>
 	<element name="Thunder" type="Feat Feature" source="Player’s Handbook" id="ID_PHB_FEAT_ELEMENTAL_ADEPT_THUNDER">
 		<supports>Elemental Adept</supports>
 		<description>
-			<p>Spells you cast ignore thunder resistance. In addition, when you roll damage for a spell you cast that deals thunder damage, you can treat any 1 on a damage die as a 2.</p>
+			<p>When you roll damage for a spell that deals thunder damage, you may add the spell's level to the total damage rolled.</p>
 		</description>
 		<sheet>
-			<description>Spells you cast ignore thunder resistance. Treat any 1 on a damage die as a 2 with thunder spells.</description>
+			<description>Thunder spells add the spell's level to the damage rolled.</description>
 		</sheet>
+		<rules>
+			<select type="Ability Score Improvement" name="Elemental Adept (Thunder)" supports="ID_PHB_FEAT_ASI_DEXTERITY|ID_PHB_FEAT_ASI_CONSTITUTION|ID_PHB_FEAT_ASI_WISDOM" />
+		</rules>
 	</element>
 	<!-- elemental adept -->
 
 	<element name="Grappler" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_GRAPPLER">
-		<prerequisite>Strength 13 or higher</prerequisite>
-		<requirements>[str:13]</requirements>
 		<description>
-			<p class="flavor">Prerequisite: Strength 13 or higher</p>
 			<p>You’ve developed the skills necessary to hold your own in close-quarters grappling. You gain the following benefits:</p>
 			<ul>
+				<li>Increase your Strength or Dexterity score by 1, to a maximum of 20.</li>
 				<li>You have advantage on attack rolls against a creature you are grappling.</li>
 				<li>You can use your action to try to pin a creature grappled by you. To do so, make another grapple check. If you succeed, you and the creature are both restrained until the grapple ends.</li>
 				<li>Creatures that are one size larger than you don’t automatically succeed on checks to escape your grapple.</li>
@@ -242,30 +242,36 @@
 			You can use your action to try to pin a creature grappled by you. To do so, make another grapple check. If you succeed, you and the creature are both restrained until the grapple ends.
 			Creatures that are one size larger than you don’t automatically succeed on checks to escape your grapple.</description>
 		</sheet>
+		<rules>
+			<select type="Ability Score Improvement" name="Grappler" supports="ID_PHB_FEAT_ASI_STRENGTH|ID_PHB_FEAT_ASI_DEXTERITY" />
+		</rules>
 	</element>
-	<element name="Great Weapon Master" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_GREATWEAPONMASTER">
+	<element name="Heavy Weapon Master" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_GREATWEAPONMASTER">
 		<description>
 			<p>You’ve learned to put the weight of a weapon to your advantage, letting its momentum empower your strikes. You gain the following benefits:</p>
 			<ul>
 				<li>On your turn, when you score a critical hit with a melee weapon or reduce a creature to 0 hit points with one, you can make one melee weapon attack as a bonus action.</li>
-				<li>Before you make a melee attack with a heavy weapon that you are proficient with, you can choose to take a - 5 penalty to the attack roll. If the attack hits, you add +10 to the attack’s damage.</li>
+				<li>Before you make a melee attack with a heavy weapon that you are proficient with, you may declare that you are making a special power attack. If you do so, the target may double the Dexterity modifier it adds to its AC (if any), but if the attack hits it does +5 damage.</li>
 			</ul>
 		</description>
 		<sheet>
 			<description>On your turn, when you score a critical hit with a melee weapon or reduce a creature to 0 hit points with one, you can make one melee weapon attack as a bonus action.
-			Before you make a melee attack with a heavy weapon that you are proficient with, you can choose to take a - 5 penalty to the attack roll. If the attack hits, you add +10 to the attack’s damage.</description>
+			You can make a power attack with a heavy weapon: double the target's Dexterity modifier to AC (if any), but add +5 to the attack's damage if it hits.</description>
 		</sheet>
 	</element>
 	<element name="Healer" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_HEALER">
+		<prerequisite>Proficiency with Medicine skill</prerequisite>
+		<requirements>ID_PROFICIENCY_SKILL_MEDICINE</requirements>
 		<description>
+			<p><i>Prerequisite: Proficiency with Medicine.</i></p>
 			<p>You are an able physician, allowing you to mend wounds quickly and get your allies back in the fight. You gain the following benefits:</p>
 			<ul>
 				<li>When you use a healer’s kit to stabilize a dying creature, that creature also regains 1 hit point.</li>
-				<li>As an action, you can spend one use of a healer’s kit to tend to a creature and restore 1d6 + 4 hit points to it, plus additional hit points equal to the creature’s maximum number of Hit Dice. The creature can’t regain hit points from this feat again until it finishes a short or long rest.</li>
+				<li>As an action, you can spend one use of a healer’s kit to tend to a creature and restore 1d6 hit points to it, plus additional hit points equal to twice the creature’s maximum number of Hit Dice. The creature can’t regain hit points from this feat again until it finishes a short or long rest.</li>
 			</ul>
 		</description>
 		<sheet action="Action">
-			<description>You can spend one use of a healer’s kit to tend to a creature and restore 1d6 + 4 hit points to it, plus additional hit points equal to the creature’s maximum number of Hit Dice. The creature can’t regain hit points from this feat again until it finishes a short or long rest.
+			<description>You can spend one use of a healer’s kit to tend to a creature and restore 1d6 hit points to it, plus additional hit points equal to twice the creature’s maximum number of Hit Dice. The creature can’t regain hit points from this feat again until it finishes a short or long rest.
 			When you use a healer’s kit to stabilize a dying creature, that creature also regains 1 hit point.</description>
 		</sheet>
 	</element>
@@ -295,15 +301,14 @@
 			<p><i>Prerequisite: Proficiency with heavy armor</i></p>
 			<p>You can use your armor to deflect strikes that would kill others. You gain the following benefits:</p>
 			<ul>
-				<li>Increase your Strength score by 1, to a maximum of 20.</li>
-				<li>While you are wearing heavy armor, bludgeoning, piercing, and slashing damage that you take from non magical weapons is reduced by 3.</li>
+				<li>While you are wearing heavy armor, any piercing and slashing damage that you take from weapon attacks is reduced by your proficiency bonus.</li>
 			</ul>
 		</description>
 		<sheet>
-			<description>While you are wearing heavy armor, bludgeoning, piercing, and slashing damage that you take from non magical weapons is reduced by 3.</description>
+			<description>While you are wearing heavy armor, any piercing and slashing damage that you take from weapon attacks is reduced by {{heavy armor master:resist}}.</description>
 		</sheet>
 		<rules>
-			<stat name="strength" value="1" />
+			<stat name="heavy armor master:resist" value="proficiency" />
 		</rules>
 	</element>
 	<element name="Inspiring Leader" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_INSPIRINGLEADER">
@@ -356,6 +361,24 @@
 			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" />
 		</rules>
 	</element>
+		<element name="Light Armor Master" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_LIGHTARMORMASTER">
+		<prerequisite>Proficiency with light armor</prerequisite>
+		<requirements>ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR</requirements>
+		<description>
+			<p><i>Prerequisite: Proficiency with light armor</i></p>
+			<p>You can use your armor to deflect strikes that would kill others. You gain the following benefits:</p>
+			<ul>
+				<li>While you are wearing light armor, any bludgeoning and piercing damage that you take from weapon attacks is reduced by your proficiency bonus.</li>
+			</ul>
+		</description>
+		<sheet>
+			<description>While you are wearing light armor, any bludgeoning and piercing damage that you take from weapon attacks is reduced by {{light armor master:resist}}.</description>
+		</sheet>
+		<rules>
+			<stat name="light armor master:resist" value="proficiency" />
+		</rules>
+	</element>
+
 	<element name="Linguist" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_LINGUIST">
 		<description>
 			<p>You have studied languages and codes, gaining the following benefits:</p>
@@ -376,7 +399,10 @@
 		</rules>
 	</element>
 	<element name="Lucky" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_LUCKY">
+		<prerequisite>Intelligence, Wisdom and Charisma 13 or higher</prerequisite>
+		<requirements>[int:13],[wis:13],[cha:13]</requirements>
 		<description>
+			<p><i>Prerequisite: Intelligence, Wisdom and Charisma of 13 or higher</i></p>
 			<p>You have inexplicable luck that seems to kick in at just the right moment.</p>
 			<p class="indent">You have 3 luck points. Whenever you make an attack roll, an ability check, or a saving throw, you can spend one luck point to roll an additional d20. You can choose to spend one of your luck points after you roll the die, but before the outcome is determined. You choose which of the d20s is used for the attack roll, ability check, or saving throw.</p>
 			<p class="indent">You can also spend one luck point when an attack roll is made against you. Roll a d20, and then choose whether the attack uses the attacker’s roll or yours.</p>
@@ -510,8 +536,8 @@
 		<description>
 			<p>You have martial training that allows you to perform special combat maneuvers. You gain the following benefits:</p>
 			<ul>
-				<li>You learn two maneuvers of your choice from among those available to the Battle Master archetype in the fighter class. If a maneuver you use requires your target to make a saving throw to resist the maneuver’s effects, the saving throw DC equals 8 + your proficiency bonus + your Strength or Dexterity modifier (your choice).</li>
-				<li>If you already have superiority dice, you gain one more; otherwise, you have one superiority die, which is a d6. This die is used to fuel your maneuvers. A superiority die is expended when you use it. You regain your expended superiority dice when you finish a short or long rest.</li>
+				<li>You learn three maneuvers of your choice from among those available to the Battle Master archetype in the fighter class. If a maneuver you use requires your target to make a saving throw to resist the maneuver’s effects, the saving throw DC equals 8 + your proficiency bonus + your Strength or Dexterity modifier (your choice).</li>
+				<li>If you already have superiority dice, you gain two more; otherwise, you have two superiority dice, which are d6s. These dice are used to fuel your maneuvers. A superiority die is expended when you use it. You regain your expended superiority dice when you finish a short or long rest.</li>
 			</ul>
 		</description>
 		<sheet>
@@ -525,10 +551,10 @@
 			<stat name="martial adept:dc" value="proficiency" />
 			<stat name="martial adept:dc" value="martial adept:ability" />
 
-			<stat name="martial adept:dice:amount" value="1" />
+			<stat name="martial adept:dice:amount" value="2" />
 			<stat name="martial adept:dice:size" value="6" />
 
-			<select type="Archetype Feature" name="Martial Adept" supports="Maneuver,Battle Master" number="2" />
+			<select type="Archetype Feature" name="Martial Adept" supports="Maneuver,Battle Master" number="3" />
 
 			<!-- battle master -->
 			<stat name="superiority dice:amount" value="1" requirements="ID_ARCHETYPE_FEATURE_BATTLE_MASTER_COMBAT_SUPERIORITY" />
@@ -539,31 +565,34 @@
 		<requirements>ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR</requirements>
 		<description>
 			<p><i>Prerequisite: Proficiency with medium armor</i></p>
-			<p>You have practiced moving in medium armor to gain the following benefits:</p>
+			<p>You can use your armor to deflect strikes that would kill others. You gain the following benefits:</p>
 			<ul>
-				<li>Wearing medium armor doesn’t impose disadvantage on your Dexterity (Stealth) checks.</li>
-				<li>When you wear medium armor, you can add 3, rather than 2, to your AC if you have a Dexterity of 16 or higher.</li>
+				<li>While you are wearing medium armor, any bludgeoning and slashing damage that you take from weapon attacks is reduced by your proficiency bonus.</li>
 			</ul>
 		</description>
 		<sheet>
-			<description>Wearing medium armor doesn’t impose disadvantage on your Stealth checks.</description>
+			<description>While you are wearing medium armor, any bludgeoning and slashing damage that you take from weapon attacks is reduced by {{medium armor master:resist}}.</description>
 		</sheet>
 		<rules>
-			<stat name="ac:armored:dexterity:cap" value="3" bonus="base" />
+			<stat name="medium armor master:resist" value="proficiency" />
 		</rules>
 	</element>
 	<element name="Mobile" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_MOBILE">
+		<prerequisite>Dexterity 13 or higher</prerequisite>
+		<requirements>[dex:13]</requirements>
 		<description>
+			<p><i>Prerequisite: Dexterity 13 or higher</i></p>
+
 			<p>You are exceptionally speedy and agile. You gain the following benefits:</p>
 			<ul>
 				<li>Your speed increases by 10 feet.</li>
 				<li>When you use the Dash action, difficult terrain doesn’t cost you extra movement on that turn.</li>
-				<li>When you make a melee attack against a creature, you don’t provoke opportunity attacks from that creature for the rest of the turn, whether you hit or not.</li>
+				<li>When you make a melee attack against a creature, your movement does not provoke opportunity attacks from that creature for the rest of the turn, whether you hit or not.</li>
 			</ul>
 		</description>
 		<sheet>
 			<description>When you use the Dash action, difficult terrain doesn’t cost you extra movement on that turn.
-			When you make a melee attack against a creature, you don’t provoke opportunity attacks from that creature for the rest of the turn, whether you hit or not.</description>
+			When you make a melee attack against a creature, your movement doesn’t provoke opportunity attacks from that creature for the rest of the turn, whether you hit or not.</description>
 		</sheet>
 		<rules>
 			<stat name="innate speed:misc" value="10" />
@@ -580,7 +609,7 @@
 			<p><i>Prerequisite: Proficiency with light armor</i></p>
 			<p>You have trained to master the use of medium armor and shields, gaining the following benefits:</p>
 			<ul>
-				<li>Increase your Strength or Dexterity score by 1, to a maximum of 20.</li>
+				<li>Increase your Strength or Constitution score by 1, to a maximum of 20.</li>
 				<li>You gain proficiency with medium armor and shields.</li>
 			</ul>
 		</description>
@@ -588,7 +617,7 @@
 			<description>You have trained to master the use of medium armor and shields.</description>
 		</sheet>
 		<rules>
-			<select type="Ability Score Improvement" name="Ability Score Increase (Moderately Armored)" supports="ID_PHB_FEAT_ASI_STRENGTH|ID_PHB_FEAT_ASI_DEXTERITY" />
+			<select type="Ability Score Improvement" name="Ability Score Increase (Moderately Armored)" supports="ID_PHB_FEAT_ASI_STRENGTH|ID_PHB_FEAT_ASI_CONSTITUTION" />
 			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" />
 			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_SHIELDS" />
 		</rules>
@@ -632,12 +661,12 @@
 			<p>You can keep your enemies at bay with reach weapons. You gain the following benefits:</p>
 			<ul>
 				<li>When you take the Attack action and attack with only a glaive, halberd, quarterstaff, or spear, you can use a bonus action to make a melee attack with the opposite end of the weapon. The weapon’s damage die for this attack is a d4, and the attack deals bludgeoning damage. This attack uses the same ability modifier as the primary attack.</li>
-				<li>While you are wielding a glaive, halberd, pike, quarterstaff, or spear, other creatures provoke an opportunity attack from you when they enter your reach.</li>
+				<li>When you make an opportunity attack with a reach weapon against another creature that is not within 5 feet of you, the attack gains advantage.</li>
 			</ul>
 		</description>
 		<sheet>
 			<description>When you take the Attack action and attack with only a glaive, halberd, quarterstaff, or spear, you can use a bonus action to make a melee attack with the opposite end of the weapon. The weapon’s damage die for this attack is a d4, and the attack deals bludgeoning damage. This attack uses the same ability modifier as the primary attack.
-			While you are wielding a glaive, halberd, pike, quarterstaff, or spear, other creatures provoke an opportunity attack from you when they enter your reach.</description>
+			When you make an opportunity attack with a reach weapon against another creature that is not within 5 feet of you, the attack gains advantage.</description>
 		</sheet>
 	</element>
 
