@@ -4,7 +4,7 @@
 		<name>Feats</name>
 		<description>Feats from the Player’s Handbook.</description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-		<update version="0.1.3">
+		<update version="0.1.4">
 			<file name="feats.xml" url="https://raw.githubusercontent.com/KoenPater/aurora_dnd5/master/core/players-handbook/feats.xml" />
 		</update>
 	</info>
@@ -660,16 +660,15 @@
 		<description>
 			<p>You can keep your enemies at bay with reach weapons. You gain the following benefits:</p>
 			<ul>
-				<li>When you take the Attack action and attack with only a glaive, halberd, quarterstaff, or spear, you can use a bonus action to make a melee attack with the opposite end of the weapon. The weapon’s damage die for this attack is a d4, and the attack deals bludgeoning damage. This attack uses the same ability modifier as the primary attack.</li>
+				<li>When you take the Attack action and attack only with a reach weapon, you can use a bonus action to make a melee attack with the opposite end of the weapon. The weapon’s damage die for this attack is a d4, and the attack deals bludgeoning damage. This attack uses the same ability modifier as the primary attack.</li>
 				<li>When you make an opportunity attack with a reach weapon against another creature that is not within 5 feet of you, the attack gains advantage.</li>
 			</ul>
 		</description>
 		<sheet>
-			<description>When you take the Attack action and attack with only a glaive, halberd, quarterstaff, or spear, you can use a bonus action to make a melee attack with the opposite end of the weapon. The weapon’s damage die for this attack is a d4, and the attack deals bludgeoning damage. This attack uses the same ability modifier as the primary attack.
+			<description>When you take the Attack action and attack only with a reach weapon, you can use a bonus action to make a melee attack with the opposite end of the weapon. The weapon’s damage die for this attack is a d4, and the attack deals bludgeoning damage. This attack uses the same ability modifier as the primary attack.
 			When you make an opportunity attack with a reach weapon against another creature that is not within 5 feet of you, the attack gains advantage.</description>
 		</sheet>
 	</element>
-
 	<element name="Resilient" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_RESILIENT">
 		<description>
 			<p>Choose one ability score. You gain the following benefits:</p>
@@ -677,8 +676,12 @@
 				<li>Increase the chosen ability score by 1, to a maximum of 20.</li>
 				<li>You gain proficiency in saving throws using the chosen ability.</li>
 			</ul>
+			<p>You can select this feat multiple times. Each time you do so, you must choose a different ability score.</p>
 		</description>
 		<sheet display="false" />
+		<setters>
+			<set name="allow multiple">true</set>
+		</setters>
 		<rules>
 			<select type="Feat Feature" name="Resilient (Feat)" supports="Resilient" />
 		</rules>
@@ -758,10 +761,10 @@
 	<!-- /resilient -->
 
 	<element name="Ritual Caster" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_RITUALCASTER">
-		<prerequisite>Intelligence or Wisdom 13 or higher</prerequisite>
-		<requirements>[int:13]||[wis:13]</requirements>
+		<prerequisite>Intelligence 13 or higher</prerequisite>
+		<requirements>[int:13]</requirements>
 		<description>
-			<p><i>Prerequisite: Intelligence or Wisdom 13 or higher</i></p>
+			<p><i>Prerequisite: Intelligence 13 or higher</i></p>
 			<p>You have learned a number of spells that you can cast as rituals. These spells are written in a ritual book, which you must have in hand while casting one of them.</p>
 			<p class="indent">When you choose this feat, you acquire a ritual book holding two 1st-level spells of your choice. Choose one of the following classes: bard, cleric, druid, sorcerer, warlock, or wizard. You must choose your spells from that class’s spell list, and the spells you choose must have the ritual tag. The class you choose also determines your spellcasting ability for these spells: Charisma for bard, sorcerer, or warlock; Wisdom for cleric or druid; or Intelligence for wizard.</p>
 			<p class="indent">If you come across a spell in written form, such as a magical spell scroll or a wizard’s spellbook, you might be able to add it to your ritual book. The spell must be on the spell list for the class you chose, the spell’s level can be no higher than half your level (rounded up), and it must have the ritual tag. The process of copying the spell into your ritual book takes 2 hours per level of the spell, and costs 50 gp per level. The cost represents material components you expend as you experiment with the spell to master it, as well as the fine inks you need to record it.</p>
@@ -856,10 +859,11 @@
 
 	<element name="Savage Attacker" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_SAVAGEATTACKER">
 		<description>
-			<p>Once per turn when you roll damage for a melee weapon attack, you can reroll the weapon's damage dice as use either total.</p>
+			<p>You roll one additional weapon damage die when determining the extra damage for a critical hit with a melee attack.</p>
+			<p>In addition, whenever you score a critical hit with a melee attack, you may immediately spend one or more Hit Dice to regain hit points, as if you had received healing.</p>
 		</description>
 		<sheet>
-			<description>Once per turn when you roll damage for a melee weapon attack, you can reroll the weapon's damage dice as use either total.</description>
+			<description>One additional weapon damage die when determining the extra damage for a critical hit with a melee attack. May spend Hit Dice to heal after a critical hit.</description>
 		</sheet>
 	</element>
 	<element name="Sentinel" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_SENTINEL">
@@ -882,14 +886,14 @@
 			<p>You have mastered ranged weapons and can make shots that others find impossible. You gain the following benefits:</p>
 			<ul>
 				<li>Attacking at long range doesn’t impose disadvantage on your ranged weapon attack rolls.</li>
-				<li>Your ranged weapon attacks ignore half cover and three-quarters cover.</li>
-				<li>Before you make an attack with a ranged weapon that you are proficient with, you can choose to take a - 5 penalty to the attack roll. If the attack hits, you add +10 to the attack’s damage.</li>
+				<li>Your ranged weapon attacks treat three-quarters cover as half cover, and half cover as no cover.</li>
+				<li>Before you make an attack with a ranged weapon that you are proficient with, you can choose to take a -5 penalty to the attack roll. If the attack hits, you add +10 to the attack’s damage.</li>
 			</ul>
 		</description>
 		<sheet>
 			<description>Attacking at long range doesn’t impose disadvantage on your ranged weapon attack rolls.
-			Your ranged weapon attacks ignore half cover and three-quarters cover.
-			Before you make an attack with a ranged weapon that you are proficient with, you can choose to take a - 5 penalty to the attack roll. If the attack hits, you add +10 to the attack’s damage.</description>
+			Your ranged weapon attacks treat three-quarters cover as half cover, and half cover as no cover.
+			Before you make an attack with a ranged weapon that you are proficient with, you can choose to take a -5 penalty to the attack roll. If the attack hits, you add +10 to the attack’s damage.</description>
 		</sheet>
 	</element>
 	<element name="Shield Master" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_SHIELDMASTER">
@@ -941,14 +945,13 @@
 			<p><i>Prerequisite: The ability to cast at least one spell</i></p>
 			<p>You have learned techniques to enhance your attacks with certain kinds of spells, gaining the following benefits:</p>
 			<ul>
-				<li>When you cast a spell that requires you to make an attack roll, the spell’s range is doubled.</li>
-				<li>Your ranged spell attacks ignore half cover and three-quarters cover.</li>
+				<li>You roll one additional damage die when determining the extra damage for a critical hit with a ranged spell attack.</li>
+				<li>Your ranged spell attacks treat three-quarters cover as half cover, and half cover as no cover.</li>
 				<li>You learn one cantrip that requires an attack roll. Choose the cantrip from the bard, cleric, druid, sorcerer, warlock, or wizard spell list. Your spellcasting ability for this cantrip depends on the spell list you chose from: Charisma for bard, sorcerer, or warlock; Wisdom for cleric or druid; or Intelligence for wizard.</li>
 			</ul>
 		</description>
 		<sheet>
-			<description>When you cast a spell that requires you to make an attack roll, the spell’s range is doubled.
-			Your ranged spell attacks ignore half cover and three-quarters cover.</description>
+			<description>Roll one additional damage die for critical hits with ranged spell attacks. Your ranged spell attacks treat three-quarters cover as half cover, and half cover as no cover.</description>
 		</sheet>
 		<rules>
 			<!-- todo: supports ID_INTERNAL_SUPPORT_SPELL_ATTACK -->
