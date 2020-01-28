@@ -4,7 +4,7 @@
 		<name>Feats</name>
 		<description>Feats from the Player’s Handbook.</description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-		<update version="0.1.4">
+		<update version="0.1.5">
 			<file name="feats.xml" url="https://raw.githubusercontent.com/KoenPater/aurora_dnd5/master/core/players-handbook/feats.xml" />
 		</update>
 	</info>
@@ -155,7 +155,7 @@
 		<description>
 			<p><i>Prerequisite: The ability to cast at least one spell of 1st level or higher</i></p>
 			<p>When you gain this feat, choose one of the following damage types: acid, cold, fire, lightning, or thunder.</p>
-			<p class="indent">When you roll damage for a spell you cast of 1st level or higher that deals damage of the chosen type, you may add the spell's level to the total damage rolled.</p>
+			<p class="indent">When you roll damage for a spell you cast of 1st level or higher that deals damage of the chosen type, you may add your proficiency bonus to the total damage rolled.</p>
 			<p class="indent">If you chose the cold damage type, you also increase your Constitution score by 1, to a maximum of 20.</p>
 			<p class="indent">If you chose the acid, lightning, or thunder damage type, you also increase your Dexterity, Constitution or Wisdom score by 1, to a maximum of 20.</p>
 			<p class="indent">You can select this feat multiple times. Each time you do so, you must choose a different damage type.</p>
@@ -171,58 +171,65 @@
 	<element name="Acid" type="Feat Feature" source="Player’s Handbook" id="ID_PHB_FEAT_ELEMENTAL_ADEPT_ACID">
 		<supports>Elemental Adept</supports>
 		<description>
-			<p>When you roll damage for a spell that deals acid damage, you may add the spell's level to the total damage rolled.</p>
+			<p>When you roll damage for a spell that deals acid damage, you may add your proficiency bonus to the total damage rolled.</p>
 		</description>
 		<sheet>
-			<description>Acid spells add the spell's level to the damage rolled.</description>
+			<description>Acid spells add {{adept:prof}} to the damage rolled.</description>
 		</sheet>
 		<rules>
 			<select type="Ability Score Improvement" name="Elemental Adept (Acid)" supports="ID_PHB_FEAT_ASI_DEXTERITY|ID_PHB_FEAT_ASI_CONSTITUTION|ID_PHB_FEAT_ASI_WISDOM" />
+			<stat name="adept:prof" value="proficiency" />
 		</rules>
 	</element>
 	<element name="Cold" type="Feat Feature" source="Player’s Handbook" id="ID_PHB_FEAT_ELEMENTAL_ADEPT_COLD">
 		<supports>Elemental Adept</supports>
 		<description>
-			<p>When you roll damage for a spell that deals cold damage, you may add the spell's level to the total damage rolled.</p>
+			<p>When you roll damage for a spell that deals cold damage, you may add your proficiency bonus to the total damage rolled.</p>
 		</description>
 		<sheet>
-			<description>Cold spells add the spell's level to the damage rolled.</description>
+			<description>Cold spells add {{adept:prof}} to the damage rolled.</description>
 		</sheet>
 		<rules>
 			<stat name="constitution" value="1" />
+			<stat name="adept:prof" value="proficiency" />
 		</rules>
 	</element>
 	<element name="Fire" type="Feat Feature" source="Player’s Handbook" id="ID_PHB_FEAT_ELEMENTAL_ADEPT_FIRE">
 		<supports>Elemental Adept</supports>
 		<description>
-			<p>When you roll damage for a spell that deals fire damage, you may add the spell's level to the total damage rolled.</p>
+			<p>When you roll damage for a spell that deals fire damage, you may add your proficiency bonus to the total damage rolled.</p>
 		</description>
 		<sheet>
-			<description>Fire spells add the spell's level to the damage rolled.</description>
+			<description>Fire spells add {{adept:prof}} to the damage rolled.</description>
 		</sheet>
+		<rules>
+			<stat name="adept:prof" value="proficiency" />
+		</rules>
 	</element>
 	<element name="Lightning" type="Feat Feature" source="Player’s Handbook" id="ID_PHB_FEAT_ELEMENTAL_ADEPT_LIGHTNING">
 		<supports>Elemental Adept</supports>
 		<description>
-			<p>When you roll damage for a spell that deals lightning damage, you may add the spell's level to the total damage rolled.</p>
+			<p>When you roll damage for a spell that deals lightning damage, you may add your proficiency bonus to the total damage rolled.</p>
 		</description>
 		<sheet>
-			<description>Lightning spells add the spell's level to the damage rolled.</description>
+			<description>Lightning spells add {{adept:prof}} to the damage rolled.</description>
 		</sheet>
 		<rules>
 			<select type="Ability Score Improvement" name="Elemental Adept (Lightning)" supports="ID_PHB_FEAT_ASI_DEXTERITY|ID_PHB_FEAT_ASI_CONSTITUTION|ID_PHB_FEAT_ASI_WISDOM" />
+			<stat name="adept:prof" value="proficiency" />
 		</rules>
 	</element>
 	<element name="Thunder" type="Feat Feature" source="Player’s Handbook" id="ID_PHB_FEAT_ELEMENTAL_ADEPT_THUNDER">
 		<supports>Elemental Adept</supports>
 		<description>
-			<p>When you roll damage for a spell that deals thunder damage, you may add the spell's level to the total damage rolled.</p>
+			<p>When you roll damage for a spell that deals thunder damage, you may add your proficiency bonus to the total damage rolled.</p>
 		</description>
 		<sheet>
-			<description>Thunder spells add the spell's level to the damage rolled.</description>
+			<description>Thunder spells add {{adept:prof}} to the damage rolled.</description>
 		</sheet>
 		<rules>
 			<select type="Ability Score Improvement" name="Elemental Adept (Thunder)" supports="ID_PHB_FEAT_ASI_DEXTERITY|ID_PHB_FEAT_ASI_CONSTITUTION|ID_PHB_FEAT_ASI_WISDOM" />
+			<stat name="adept:prof" value="proficiency" />
 		</rules>
 	</element>
 	<!-- elemental adept -->
@@ -251,12 +258,12 @@
 			<p>You’ve learned to put the weight of a weapon to your advantage, letting its momentum empower your strikes. You gain the following benefits:</p>
 			<ul>
 				<li>On your turn, when you score a critical hit with a melee weapon or reduce a creature to 0 hit points with one, you can make one melee weapon attack as a bonus action.</li>
-				<li>Before you make a melee attack with a heavy weapon that you are proficient with, you may declare that you are making a special power attack. If you do so, the target may double the Dexterity modifier it adds to its AC (if any), but if the attack hits it does +5 damage.</li>
+				<li>Before you make a melee attack with a heavy weapon that you are proficient with, you may declare that you are making a special power attack. If you do so, the target may double the Dexterity modifier it adds to its AC (if any). If the attack hits, it does +5 damage.</li>
 			</ul>
 		</description>
 		<sheet>
 			<description>On your turn, when you score a critical hit with a melee weapon or reduce a creature to 0 hit points with one, you can make one melee weapon attack as a bonus action.
-			You can make a power attack with a heavy weapon: double the target's Dexterity modifier to AC (if any), but add +5 to the attack's damage if it hits.</description>
+			You can make a power attack with a heavy weapon: double the target's Dexterity modifier to AC (if any) and add +5 to the attack's damage if it hits.</description>
 		</sheet>
 	</element>
 	<element name="Healer" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_HEALER">
@@ -301,15 +308,12 @@
 			<p><i>Prerequisite: Proficiency with heavy armor</i></p>
 			<p>You can use your armor to deflect strikes that would kill others. You gain the following benefits:</p>
 			<ul>
-				<li>While you are wearing heavy armor, any piercing and slashing damage that you take from weapon attacks is reduced by your proficiency bonus.</li>
+				<li>While you are wearing heavy armor, you have resistance to any piercing and slashing damage that you take from weapon attacks.</li>
 			</ul>
 		</description>
 		<sheet>
-			<description>While you are wearing heavy armor, any piercing and slashing damage that you take from weapon attacks is reduced by {{heavy armor master:resist}}.</description>
+			<description>While you are wearing heavy armor, you have resistance to any piercing and slashing damage that you take from weapon attacks.</description>
 		</sheet>
-		<rules>
-			<stat name="heavy armor master:resist" value="proficiency" />
-		</rules>
 	</element>
 	<element name="Inspiring Leader" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_INSPIRINGLEADER">
 		<prerequisite>Charisma 13 or higher</prerequisite>
@@ -368,15 +372,12 @@
 			<p><i>Prerequisite: Proficiency with light armor</i></p>
 			<p>You can use your armor to deflect strikes that would kill others. You gain the following benefits:</p>
 			<ul>
-				<li>While you are wearing light armor, any bludgeoning and piercing damage that you take from weapon attacks is reduced by your proficiency bonus.</li>
+				<li>While you are wearing light armor, you have resistance to any piercing and bludgeoning damage that you take from weapon attacks.</li>
 			</ul>
 		</description>
 		<sheet>
-			<description>While you are wearing light armor, any bludgeoning and piercing damage that you take from weapon attacks is reduced by {{light armor master:resist}}.</description>
+			<description>While you are wearing light armor, you have resistance to any piercing and bludgeoning damage that you take from weapon attacks.</description>
 		</sheet>
-		<rules>
-			<stat name="light armor master:resist" value="proficiency" />
-		</rules>
 	</element>
 
 	<element name="Linguist" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_LINGUIST">
@@ -567,15 +568,12 @@
 			<p><i>Prerequisite: Proficiency with medium armor</i></p>
 			<p>You can use your armor to deflect strikes that would kill others. You gain the following benefits:</p>
 			<ul>
-				<li>While you are wearing medium armor, any bludgeoning and slashing damage that you take from weapon attacks is reduced by your proficiency bonus.</li>
+				<li>While you are wearing medium armor, you have resistance to any slashing and bludgeoning damage that you take from weapon attacks.</li>
 			</ul>
 		</description>
 		<sheet>
-			<description>While you are wearing medium armor, any bludgeoning and slashing damage that you take from weapon attacks is reduced by {{medium armor master:resist}}.</description>
+			<description>While you are wearing medium armor, you have resistance to any slashing and bludgeoning damage that you take from weapon attacks.</description>
 		</sheet>
-		<rules>
-			<stat name="medium armor master:resist" value="proficiency" />
-		</rules>
 	</element>
 	<element name="Mobile" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_MOBILE">
 		<prerequisite>Dexterity 13 or higher</prerequisite>
@@ -767,10 +765,10 @@
 			<p><i>Prerequisite: Intelligence 13 or higher</i></p>
 			<p>You have learned a number of spells that you can cast as rituals. These spells are written in a ritual book, which you must have in hand while casting one of them.</p>
 			<p class="indent">When you choose this feat, you acquire a ritual book holding two 1st-level spells of your choice. Choose one of the following classes: bard, cleric, druid, sorcerer, warlock, or wizard. You must choose your spells from that class’s spell list, and the spells you choose must have the ritual tag. The class you choose also determines your spellcasting ability for these spells: Charisma for bard, sorcerer, or warlock; Wisdom for cleric or druid; or Intelligence for wizard.</p>
-			<p class="indent">If you come across a spell in written form, such as a magical spell scroll or a wizard’s spellbook, you might be able to add it to your ritual book. The spell must be on the spell list for the class you chose, the spell’s level can be no higher than half your level (rounded up), and it must have the ritual tag. The process of copying the spell into your ritual book takes 2 hours per level of the spell, and costs 50 gp per level. The cost represents material components you expend as you experiment with the spell to master it, as well as the fine inks you need to record it.</p>
+			<p class="indent">If you come across a spell in written form, such as a magical spell scroll or a wizard’s spellbook, you might be able to add it to your ritual book. The spell must be on the spell list for the class you chose, the spell’s level can be no higher than half your level (rounded up), and it must have the ritual tag. The process of copying the spell into your ritual book takes 2 hours per level of the spell, and costs 25 gp per level. The cost represents material components you expend as you experiment with the spell to master it, as well as the fine inks you need to record it.</p>
 		</description>
 		<sheet>
-			<description>You have learned a number of spells that you can cast as rituals.</description>
+			<description>You have learned a number of spells that you can cast as rituals. You can learn any new ritual spells you come across.</description>
 		</sheet>
 		<rules>
 			<!-- todo: grant ID_INTERNAL_RITUAL-->
