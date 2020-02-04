@@ -5478,10 +5478,11 @@
     <supports>Bard, Druid, Sorcerer, Wizard</supports>
     <description>
       <p>This spell transforms a creature that you can see within range into a new form. An unwilling creature must make a Wisdom saving throw to avoid the effect. A shapechanger automatically succeeds on this saving throw.</p>
-      <p class="indent">The transformation lasts for the duration, or until the target drops to 0 hit points or dies. The new form can be any beast whose challenge rating is equal to or less than the target’s (or the target’s level, if it doesn’t have a challenge rating). The target’s game statistics, including mental ability scores, are replaced by the statistics of the chosen beast. It retains its alignment and personality.</p>
+      <p class="indent">The transformation lasts for the duration, or until the target drops to 0 hit points or dies. The new form can be any beast with a challenge rating of 4 or lower. The target’s game statistics, including mental ability scores, are replaced by the statistics of the chosen beast. It retains its alignment and personality.</p>
       <p class="indent">The target assumes the hit points of its new form. When it reverts to its normal form, the creature returns to the number of hit points it had before it transformed. If it reverts as a result of dropping to 0 hit points, any excess damage carries over to its normal form. As long as the excess damage doesn’t reduce the creature’s normal form to 0 hit points, it isn’t knocked unconscious.</p>
       <p class="indent">The creature is limited in the actions it can perform by the nature of its new form, and it can’t speak, cast spells, or take any other action that requires hands or speech.</p>
       <p class="indent">The target’s gear melds into the new form. The creature can’t activate, use, wield, or otherwise benefit from any of its equipment.</p>
+	  <p class="indent"><b><i>At Higher Levels.</i></b> When you cast this spell using a spell slot of 5th level or higher, the maximum challenge rating of the new form increases by 1 for each slot level above 4th.</p>
     </description>
     <setters>
       <set name="keywords"></set>
@@ -6746,12 +6747,12 @@
       <set name="level">4</set>
       <set name="school">Abjuration</set>
       <set name="time">1 action</set>
-      <set name="duration">Concentration, up to 1 hour</set>
+      <set name="duration">Concentration, up to 8 hours</set>
       <set name="range">Touch</set>
       <set name="hasVerbalComponent">true</set>
       <set name="hasSomaticComponent">true</set>
       <set name="hasMaterialComponent">true</set>
-      <set name="materialComponent">diamond dust worth 100 gp, which the spell consumes</set>
+      <set name="materialComponent">diamond dust worth 50 gp, which the spell consumes</set>
       <set name="isConcentration">true</set>
       <set name="isRitual">false</set>
     </setters>
@@ -7197,7 +7198,7 @@
     <description>
       <p>Choose one creature or nonmagical object that you can see within range. You transform the creature into a different creature, the creature into an object, or the object into a creature (the object must be neither worn nor carried by another creature). The transformation lasts for the duration, or until the target drops to 0 hit points or dies. If you concentrate on this spell for the full duration, the transformation becomes permanent.</p>
       <p class="indent">Shapechangers aren’t affected by this spell. An unwilling creature can make a Wisdom saving throw, and if it succeeds, it isn’t affected by this spell.</p>
-      <p class="indent"><b><i>Creature into Creature.</i></b> If you turn a creature into another kind of creature, the new form can be any kind you choose whose challenge rating is equal to or less than the target’s (or its level, if the target doesn’t have a challenge rating). The target’s game statistics, including mental ability scores, are replaced by the statistics of the new form. It retains its alignment and personality.</p>
+      <p class="indent"><b><i>Creature into Creature.</i></b> If you turn a creature into another kind of creature, the new form can be any kind you choose whose challenge rating is 9 or lower. The target’s game statistics, including mental ability scores, are replaced by the statistics of the new form. It retains its alignment and personality.</p>
       <p class="indent">The target assumes the hit points of its new form, and when it reverts to its normal form, the creature returns to the number of hit points it had before it transformed. If it reverts as a result of dropping to 0 hit points, any excess damage carries over to its normal form. As long as the excess damage doesn’t reduce the creature’s normal form to 0 hit points, it isn’t knocked unconscious.</p>
       <p class="indent">The creature is limited in the actions it can perform by the nature of its new form, and it can’t speak, cast spells, or take any other action that requires hands or speech unless its new form is capable of such actions.</p>
       <p class="indent">The target’s gear melds into the new form. The creature can’t activate, use, wield, or otherwise benefit from any of its equipment.</p>
@@ -7389,7 +7390,7 @@
   <element name="Wall of Force" type="Spell" source="Player’s Handbook" id="ID_PHB_SPELL_WALL_OF_FORCE">
     <supports>Wizard</supports>
     <description>
-      <p>An invisible wall of force springs into existence at a point you choose within range. The wall appears in any orientation you choose, as a horizontal or vertical barrier or at an angle. It can be free floating or resting on a solid surface. You can form it into a hemispherical dome or a sphere with a radius of up to 10 feet, or you can shape a flat surface made up of ten 10-foot-by-10-foot panels. Each panel must be contiguous with another panel. In any form, the wall is 1/4 inch thick. It lasts for the duration. If the wall cuts through a creature’s space when it appears, the creature is pushed to one side of the wall (your choice which side).</p>
+      <p>An invisible wall of force springs into existence at a point you choose within range. The wall appears in any orientation you choose, as a horizontal or vertical barrier or at an angle. It can be free floating or resting on a solid surface. You can form it into a hemispherical dome or a sphere with a radius of up to 10 feet, or you can shape a flat surface made up of ten 10-foot-by-10-foot panels. Each panel must be contiguous with another panel. In any form, the wall is 1/4 inch thick. It lasts for the duration. If the wall cuts through a creature’s space when it appears, the creature is pushed to one side of the wall (your choice). If a creature would be surrounded on all sides by the wall (or the wall and another solid surface), that creature can make a Dexterity saving throw. On a success, it can use its reaction to move up to its speed so that it is no longer enclosed by the wall.</p>
 	  <p class="indent">Nothing can physically pass through the wall. It is immune to all damage and can’t be dispelled by dispel magic. A disintegrate spell destroys the wall instantly, however. The wall also extends into the Ethereal Plane, blocking ethereal travel through the wall.</p>
     </description>
     <setters>
